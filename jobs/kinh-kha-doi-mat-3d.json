@@ -1,0 +1,16 @@
+{
+  "ten": "kinh-kha-doi-mat-3d",
+  "nguon": {
+    "repo": "nguyenhoangan1205/nguoi-que-video",
+    "nhanh": "claude/elegant-dijkstra-j1ws93",
+    "commit": "c7853d5244129f794215c208edf3bed580426210"
+  },
+  "gui_luc": "2026-10-21T04:09:12Z",
+  "phim": {
+    "engine": "3d",
+    "title": "Kinh Kha thích Tần: Đối mặt (bản 3D thử)",
+    "canh": "doi-mat",
+    "letterbox": true,
+    "fade": 0.8
+  }
+}
