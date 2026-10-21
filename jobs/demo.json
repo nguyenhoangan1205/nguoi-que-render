@@ -2,10 +2,10 @@
   "ten": "demo",
   "nguon": {
     "repo": "nguyenhoangan1205/nguoi-que-video",
-    "nhanh": "main",
-    "commit": "c6b5903ad3edc7a435e28d1106a0bc7c2b9ee1d1"
+    "nhanh": "claude/upbeat-davinci-i8q4v1",
+    "commit": "6cc86b50a68d219f1194aeb8e16c24006ae0ca92"
   },
-  "gui_luc": "2026-10-21T03:13:39Z",
+  "gui_luc": "2026-10-21T03:14:14Z",
   "phim": {
     "title": "Một ngày đi dạo",
     "aspect": "16:9",
