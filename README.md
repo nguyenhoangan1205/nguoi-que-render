@@ -6,6 +6,14 @@ Máy render cho [nguoi-que-video](https://github.com/nguyenhoangan1205/nguoi-que
 2. Repo này thấy phiếu mới thì tự render (lấy engine, nhân vật, giọng nói đúng commit đã gửi).
 3. Xong, video MP4 và bảng phân cảnh PNG nằm ở **Releases**, mỗi lần render một bản (`<ten>-<số>`).
 
+## Phim 3D: render song song
+
+Phim 3D (file phim có `"engine": "3d"`) vẽ bằng CPU nên chậm, khoảng 2,5 giây một khung. Workflow chia phim thành **8 đoạn**, mỗi đoạn render trên một máy riêng cùng lúc. Job **ghep** nối các đoạn với tiếng rồi đăng lên Releases. Cảnh 43 giây mất khoảng 10 phút thay vì gần 1 giờ.
+
+- Đổi số máy: **Actions → Render → Run workflow**, ô "Số máy render song song" (tối đa 20 máy cùng lúc với tài khoản miễn phí).
+- Phim 2D nhanh nên vẫn render trọn trên một máy.
+- Phiếu gửi từ commit cũ (trước khi `nguoi-que-video` hỗ trợ chia đoạn) tự render trọn trên một máy.
+
 ## Phiếu render
 
 ```json
