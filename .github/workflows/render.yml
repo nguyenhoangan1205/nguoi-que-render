@@ -1,6 +1,10 @@
 # Nhận phiếu render trong jobs/*.json (do nguoi-que-video gửi sang), render MP4 và đăng lên Releases.
 # Phiếu: { "ten", "nguon": { "repo", "nhanh", "commit" }, "phim": { ...file phim... } }
 # Cần secret RENDER_TOKEN: token đọc được repo nguoi-que-video.
+#
+# Phim 3D ("engine": "3d") vẽ bằng CPU nên chậm (khoảng 2,5 giây một khung). Workflow chia phim
+# thành SO_DOAN đoạn, mỗi đoạn render trên một máy riêng cùng lúc, rồi job "ghep" nối lại với tiếng.
+# Phim 2D nhanh nên vẫn render trọn trên một máy.
 
 name: Render
 
@@ -13,15 +17,23 @@ on:
       phieu:
         description: "Phiếu cần render lại (ví dụ jobs/kinh-kha.json, nhiều phiếu cách nhau bằng dấu cách)"
         required: true
+      so_doan:
+        description: "Số máy render song song cho phim 3D"
+        required: false
+        default: "8"
 
 permissions:
   contents: write
+
+env:
+  SO_DOAN: ${{ inputs.so_doan || '8' }}
 
 jobs:
   chon:
     runs-on: ubuntu-latest
     outputs:
       phieu: ${{ steps.chon.outputs.phieu }}
+      doan: ${{ steps.chon.outputs.doan }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,16 +51,25 @@ jobs:
             files=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'jobs/*.json')
           fi
           echo "phieu=$(printf '%s\n' $files | jq -R . | jq -sc 'map(select(length>0))')" >> "$GITHUB_OUTPUT"
+          # Mỗi phiếu thành n đoạn: phim 3D chia SO_DOAN đoạn, phim 2D một đoạn.
+          doan=$(for f in $files; do
+            n=1
+            if [ "$(jq -r '.phim.engine // "2d"' "$f")" = "3d" ]; then n=$SO_DOAN; fi
+            for k in $(seq 1 $n); do jq -nc --arg p "$f" --argjson k $k --argjson n $n '{phieu:$p, k:$k, n:$n}'; done
+          done | jq -sc .)
+          echo "doan=$doan" >> "$GITHUB_OUTPUT"
+          echo "Đoạn cần render: $doan"
 
   render:
     needs: chon
-    if: needs.chon.outputs.phieu != '[]'
+    if: needs.chon.outputs.doan != '[]'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     strategy:
       fail-fast: false
       matrix:
-        phieu: ${{ fromJson(needs.chon.outputs.phieu) }}
+        include: ${{ fromJson(needs.chon.outputs.doan) }}
+    name: render ${{ matrix.phieu }} (${{ matrix.k }}/${{ matrix.n }})
     steps:
       - uses: actions/checkout@v4
         with:
@@ -60,7 +81,6 @@ jobs:
           p="render/${{ matrix.phieu }}"
           echo "ten=$(jq -r .ten "$p")" >> "$GITHUB_OUTPUT"
           echo "repo=$(jq -r .nguon.repo "$p")" >> "$GITHUB_OUTPUT"
-          echo "nhanh=$(jq -r .nguon.nhanh "$p")" >> "$GITHUB_OUTPUT"
           echo "commit=$(jq -r .nguon.commit "$p")" >> "$GITHUB_OUTPUT"
 
       - name: Kiểm tra token
@@ -90,12 +110,85 @@ jobs:
         working-directory: engine
         env:
           TEN: ${{ steps.phieu.outputs.ten }}
+          K: ${{ matrix.k }}
+          N: ${{ matrix.n }}
         run: |
           npm ci
+          mkdir -p out
           jq .phim "../render/${{ matrix.phieu }}" > "phim/$TEN.json"
-          npm run storyboard -- "phim/$TEN.json"
-          npm run render -- "phim/$TEN.json"
+          # Engine cũ (trước khi có --part) không chia được: đoạn 1 render trọn phim, các đoạn khác nghỉ.
+          if [ "$N" -gt 1 ] && ! grep -q -- '--part=' scripts/render-film.mjs; then
+            echo "Engine ở commit này chưa chia đoạn được, render trọn trên đoạn 1."
+            if [ "$K" != 1 ]; then exit 0; fi
+            N=1
+          fi
+          if [ "$N" = 1 ]; then
+            npm run storyboard -- "phim/$TEN.json"
+            npm run render -- "phim/$TEN.json"
+          else
+            if [ "$K" = 1 ]; then
+              npm run storyboard -- "phim/$TEN.json"
+              npm run render -- "phim/$TEN.json" --audio
+            fi
+            npm run render -- "phim/$TEN.json" --part=$K/$N
+          fi
           ls -la out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.phieu.outputs.ten }}-doan-${{ matrix.k }}
+          path: |
+            engine/out/*.mp4
+            engine/out/*.aac
+            engine/out/*.png
+          if-no-files-found: ignore
+          retention-days: 7
+
+  ghep:
+    needs: [chon, render]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        phieu: ${{ fromJson(needs.chon.outputs.phieu) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: render
+
+      - name: Đọc phiếu
+        id: phieu
+        run: |
+          p="render/${{ matrix.phieu }}"
+          echo "ten=$(jq -r .ten "$p")" >> "$GITHUB_OUTPUT"
+          echo "repo=$(jq -r .nguon.repo "$p")" >> "$GITHUB_OUTPUT"
+          echo "nhanh=$(jq -r .nguon.nhanh "$p")" >> "$GITHUB_OUTPUT"
+          echo "commit=$(jq -r .nguon.commit "$p")" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: ${{ steps.phieu.outputs.ten }}-doan-*
+          path: out
+          merge-multiple: true
+
+      - name: Cài ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Nối các đoạn
+        working-directory: out
+        env:
+          TEN: ${{ steps.phieu.outputs.ten }}
+        run: |
+          ls -la
+          if [ ! -f "$TEN.mp4" ]; then
+            for k in $(seq 1 64); do
+              if [ -f "$TEN.part-$k.mp4" ]; then echo "file '$TEN.part-$k.mp4'"; fi
+            done > danh-sach.txt
+            cat danh-sach.txt
+            ffmpeg -y -v error -f concat -safe 0 -i danh-sach.txt -i "$TEN.aac" \
+              -map 0:v -map 1:a -c copy -movflags +faststart "$TEN.mp4"
+          fi
+          ffprobe -v error -show_entries format=duration,size -of default=nw=1 "$TEN.mp4"
 
       - name: Đăng lên Releases
         env:
@@ -106,15 +199,10 @@ jobs:
           REPO: ${{ steps.phieu.outputs.repo }}
         run: |
           tag="$TEN-${{ github.run_number }}"
-          gh release create "$tag" engine/out/"$TEN".mp4 engine/out/"$TEN"-storyboard.png \
+          files="out/$TEN.mp4"
+          [ -f "out/$TEN-storyboard.png" ] && files="$files out/$TEN-storyboard.png"
+          gh release create "$tag" $files \
             --repo "${{ github.repository }}" \
             --title "$TEN (nhánh $NHANH, #${{ github.run_number }})" \
             --notes "Phim \`$TEN\` từ $REPO, nhánh \`$NHANH\`, commit ${COMMIT:0:7}."
           echo "### $TEN: https://github.com/${{ github.repository }}/releases/tag/$tag" >> "$GITHUB_STEP_SUMMARY"
-
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: ${{ steps.phieu.outputs.ten }}-${{ github.run_number }}
-          path: engine/out/
-          retention-days: 7
