@@ -1,0 +1,120 @@
+# Nhận phiếu render trong jobs/*.json (do nguoi-que-video gửi sang), render MP4 và đăng lên Releases.
+# Phiếu: { "ten", "nguon": { "repo", "nhanh", "commit" }, "phim": { ...file phim... } }
+# Cần secret RENDER_TOKEN: token đọc được repo nguoi-que-video.
+
+name: Render
+
+on:
+  push:
+    paths:
+      - "jobs/*.json"
+  workflow_dispatch:
+    inputs:
+      phieu:
+        description: "Phiếu cần render lại (ví dụ jobs/kinh-kha.json, nhiều phiếu cách nhau bằng dấu cách)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  chon:
+    runs-on: ubuntu-latest
+    outputs:
+      phieu: ${{ steps.chon.outputs.phieu }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: chon
+        env:
+          NHAP: ${{ inputs.phieu }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            files="$NHAP"
+          else
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then BEFORE=HEAD~1; fi
+            git fetch --depth=1 origin "$BEFORE" 2>/dev/null || true
+            files=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'jobs/*.json')
+          fi
+          echo "phieu=$(printf '%s\n' $files | jq -R . | jq -sc 'map(select(length>0))')" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: chon
+    if: needs.chon.outputs.phieu != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        phieu: ${{ fromJson(needs.chon.outputs.phieu) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: render
+
+      - name: Đọc phiếu
+        id: phieu
+        run: |
+          p="render/${{ matrix.phieu }}"
+          echo "ten=$(jq -r .ten "$p")" >> "$GITHUB_OUTPUT"
+          echo "repo=$(jq -r .nguon.repo "$p")" >> "$GITHUB_OUTPUT"
+          echo "nhanh=$(jq -r .nguon.nhanh "$p")" >> "$GITHUB_OUTPUT"
+          echo "commit=$(jq -r .nguon.commit "$p")" >> "$GITHUB_OUTPUT"
+
+      - name: Kiểm tra token
+        env:
+          T: ${{ secrets.RENDER_TOKEN }}
+        run: |
+          if [ -z "$T" ]; then
+            echo "::error::Thiếu secret RENDER_TOKEN (Settings -> Secrets and variables -> Actions)."
+            exit 1
+          fi
+
+      - name: Lấy engine đúng commit đã gửi
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.phieu.outputs.repo }}
+          ref: ${{ steps.phieu.outputs.commit }}
+          token: ${{ secrets.RENDER_TOKEN }}
+          path: engine
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: engine/package-lock.json
+
+      - name: Render
+        working-directory: engine
+        env:
+          TEN: ${{ steps.phieu.outputs.ten }}
+        run: |
+          npm ci
+          jq .phim "../render/${{ matrix.phieu }}" > "phim/$TEN.json"
+          npm run storyboard -- "phim/$TEN.json"
+          npm run render -- "phim/$TEN.json"
+          ls -la out
+
+      - name: Đăng lên Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TEN: ${{ steps.phieu.outputs.ten }}
+          NHANH: ${{ steps.phieu.outputs.nhanh }}
+          COMMIT: ${{ steps.phieu.outputs.commit }}
+          REPO: ${{ steps.phieu.outputs.repo }}
+        run: |
+          tag="$TEN-${{ github.run_number }}"
+          gh release create "$tag" engine/out/"$TEN".mp4 engine/out/"$TEN"-storyboard.png \
+            --repo "${{ github.repository }}" \
+            --title "$TEN (nhánh $NHANH, #${{ github.run_number }})" \
+            --notes "Phim \`$TEN\` từ $REPO, nhánh \`$NHANH\`, commit ${COMMIT:0:7}."
+          echo "### $TEN: https://github.com/${{ github.repository }}/releases/tag/$tag" >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ steps.phieu.outputs.ten }}-${{ github.run_number }}
+          path: engine/out/
+          retention-days: 7
