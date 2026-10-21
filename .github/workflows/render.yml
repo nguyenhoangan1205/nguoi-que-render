@@ -171,6 +171,9 @@ jobs:
           path: out
           merge-multiple: true
 
+      - name: Cài ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
       - name: Nối các đoạn
         working-directory: out
         env:
