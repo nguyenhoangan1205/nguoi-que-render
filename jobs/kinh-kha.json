@@ -1,0 +1,1832 @@
+{
+  "ten": "kinh-kha",
+  "nguon": {
+    "repo": "nguyenhoangan1205/nguoi-que-video",
+    "nhanh": "main",
+    "commit": "c6b5903ad3edc7a435e28d1106a0bc7c2b9ee1d1"
+  },
+  "gui_luc": "2026-10-21T03:13:39Z",
+  "phim": {
+    "title": "Kinh Kha thích Tần",
+    "aspect": "16:9",
+    "letterbox": true,
+    "fade": 0.4,
+    "voices": {
+      "kinh-kha": "TqkkccUg3tobDj5LbKlt",
+      "tan-thuy-hoang": "7hsfEc7irDn6E8br0qfw",
+      "tuong-1": "LPldyaIkUUSOPCRFrgYJ",
+      "ke-chuyen": "oLR5l8TbWm0sNc5LspDA"
+    },
+    "scenes": [
+      {
+        "id": "tua-de",
+        "duration": 9.0,
+        "caption": "KINH KHA THÍCH TẦN",
+        "background": {
+          "color": "#1c0a0a",
+          "groundColor": null
+        },
+        "props": [
+          {
+            "type": "banner",
+            "x": 760,
+            "y": 700,
+            "text": "Tần",
+            "color": "#7f1d1d",
+            "scale": 1.3
+          },
+          {
+            "type": "banner",
+            "x": 1160,
+            "y": 700,
+            "text": "Tần",
+            "color": "#7f1d1d",
+            "scale": 1.3
+          }
+        ],
+        "narration": [
+          {
+            "at": 1.2,
+            "text": "Năm hai trăm hai mươi bảy trước Công nguyên. Nước Tần nuốt dần sáu nước.",
+            "audio": "am-thanh/kinh-kha/tua-de-ke-chuyen-01.mp3"
+          }
+        ],
+        "sounds": [
+          {
+            "src": "am-thanh/kinh-kha/sfx/trong-tran.mp3",
+            "at": 0,
+            "volume": 0.5
+          }
+        ],
+        "actors": []
+      },
+      {
+        "id": "cung-dien",
+        "duration": 11,
+        "background": {
+          "color": "#e9e3d3",
+          "groundColor": "#c8b99c"
+        },
+        "props": [
+          {
+            "type": "palace",
+            "x": 960,
+            "width": 1100,
+            "height": 600
+          },
+          {
+            "type": "banner",
+            "x": 330,
+            "text": "Tần"
+          },
+          {
+            "type": "banner",
+            "x": 1590,
+            "text": "Tần"
+          }
+        ],
+        "camera": [
+          {
+            "at": 0,
+            "shot": "wide"
+          },
+          {
+            "at": 5,
+            "x": 960,
+            "y": 620,
+            "zoom": 1.9,
+            "move": 4
+          }
+        ],
+        "sounds": [
+          {
+            "src": "am-thanh/kinh-kha/sfx/gio.mp3",
+            "at": 0,
+            "volume": 0.35,
+            "loop": true
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/trong-tran.mp3",
+            "at": 0,
+            "volume": 0.25
+          }
+        ],
+        "actors": [
+          {
+            "character": "linh-vang",
+            "id": "linh-1",
+            "weapon": "spear",
+            "start": {
+              "x": 260,
+              "view": "right",
+              "pose": "stand"
+            },
+            "actions": [
+              {
+                "type": "walk",
+                "to": 820
+              },
+              {
+                "type": "idle",
+                "duration": 1
+              },
+              {
+                "type": "walk",
+                "to": 300
+              }
+            ],
+            "layers": [
+              {
+                "type": "pose",
+                "pose": "hold-spear",
+                "joints": [
+                  "shoulderR",
+                  "elbowR"
+                ],
+                "at": 0,
+                "duration": 11
+              }
+            ]
+          },
+          {
+            "character": "linh-vang",
+            "id": "linh-2",
+            "weapon": "spear",
+            "start": {
+              "x": 1660,
+              "view": "left",
+              "pose": "stand"
+            },
+            "actions": [
+              {
+                "type": "walk",
+                "to": 1120
+              },
+              {
+                "type": "idle",
+                "duration": 1
+              },
+              {
+                "type": "walk",
+                "to": 1640
+              }
+            ],
+            "layers": [
+              {
+                "type": "pose",
+                "pose": "hold-spear",
+                "joints": [
+                  "shoulderR",
+                  "elbowR"
+                ],
+                "at": 0,
+                "duration": 11
+              }
+            ]
+          },
+          {
+            "character": "linh-vang",
+            "id": "linh-3",
+            "weapon": "spear",
+            "y": 840,
+            "scale": 0.82,
+            "start": {
+              "x": 1250,
+              "view": "left",
+              "pose": "stand"
+            },
+            "actions": [
+              {
+                "type": "walk",
+                "to": 680
+              },
+              {
+                "type": "idle",
+                "duration": 1.2
+              },
+              {
+                "type": "walk",
+                "to": 1250
+              }
+            ],
+            "layers": [
+              {
+                "type": "pose",
+                "pose": "hold-spear",
+                "joints": [
+                  "shoulderR",
+                  "elbowR"
+                ],
+                "at": 0,
+                "duration": 11
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tuong-thanh",
+        "duration": 14,
+        "background": {
+          "color": "#dbeafe",
+          "groundColor": "#a8977f"
+        },
+        "props": [
+          {
+            "type": "palace",
+            "x": 1640,
+            "scale": 0.45,
+            "y": 780
+          },
+          {
+            "type": "wall",
+            "x": 640,
+            "width": 1300,
+            "height": 300,
+            "front": true
+          }
+        ],
+        "camera": [
+          {
+            "at": 0,
+            "shot": "wide"
+          },
+          {
+            "at": 3,
+            "shot": "close",
+            "on": "kinh-kha",
+            "cut": true
+          },
+          {
+            "at": 7,
+            "shot": "wide",
+            "cut": true
+          },
+          {
+            "at": 10,
+            "shot": "close",
+            "on": "kinh-kha",
+            "cut": true
+          }
+        ],
+        "narration": [
+          {
+            "at": 0.4,
+            "text": "Ở đất Yên, có một người mang mối thù của cả bộ tộc.",
+            "audio": "am-thanh/kinh-kha/tuong-thanh-ke-chuyen-01.mp3"
+          }
+        ],
+        "sounds": [
+          {
+            "src": "am-thanh/kinh-kha/sfx/gio.mp3",
+            "at": 0,
+            "volume": 0.4,
+            "loop": true
+          }
+        ],
+        "actors": [
+          {
+            "character": "kinh-kha",
+            "start": {
+              "x": 700,
+              "view": "right",
+              "pose": "crouch",
+              "expression": "normal"
+            },
+            "actions": [
+              {
+                "type": "pose",
+                "pose": "crouch",
+                "duration": 2.4
+              },
+              {
+                "type": "pose",
+                "pose": "stand",
+                "duration": 2.6,
+                "transition": 1.6
+              },
+              {
+                "type": "idle",
+                "duration": 5
+              },
+              {
+                "type": "pose",
+                "pose": "stand",
+                "duration": 1.2,
+                "expression": "angry"
+              },
+              {
+                "type": "pose",
+                "pose": "crouch",
+                "duration": 3,
+                "transition": 0.4
+              }
+            ]
+          },
+          {
+            "character": "linh-vang",
+            "id": "linh-1",
+            "weapon": "spear",
+            "y": 780,
+            "scale": 0.42,
+            "start": {
+              "x": 1480,
+              "view": "right",
+              "pose": "stand"
+            },
+            "actions": [
+              {
+                "type": "walk",
+                "to": 1800
+              },
+              {
+                "type": "walk",
+                "to": 1480
+              },
+              {
+                "type": "walk",
+                "to": 1800
+              }
+            ],
+            "layers": [
+              {
+                "type": "pose",
+                "pose": "hold-spear",
+                "joints": [
+                  "shoulderR",
+                  "elbowR"
+                ],
+                "at": 0,
+                "duration": 14
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lop-canh-1",
+        "duration": 26,
+        "background": {
+          "color": "#e9e3d3",
+          "groundColor": "#c8b99c"
+        },
+        "props": [
+          {
+            "type": "palace",
+            "x": 1500,
+            "scale": 0.5,
+            "y": 800
+          },
+          {
+            "type": "banner",
+            "x": 260,
+            "text": "Tần"
+          },
+          {
+            "type": "rock",
+            "x": 990,
+            "scale": 1.5,
+            "front": true
+          }
+        ],
+        "camera": [
+          {
+            "at": 0,
+            "shot": "full",
+            "on": "kinh-kha"
+          },
+          {
+            "at": 8,
+            "shot": "medium",
+            "on": "linh-1",
+            "cut": true
+          },
+          {
+            "at": 11,
+            "shot": "close",
+            "on": "kinh-kha",
+            "cut": true
+          },
+          {
+            "at": 15,
+            "shot": "wide",
+            "cut": true
+          }
+        ],
+        "sounds": [
+          {
+            "src": "am-thanh/kinh-kha/sfx/gio.mp3",
+            "at": 0,
+            "volume": 0.3,
+            "loop": true
+          }
+        ],
+        "actors": [
+          {
+            "character": "linh-vang",
+            "id": "linh-1",
+            "weapon": "spear",
+            "start": {
+              "x": 600,
+              "view": "right",
+              "pose": "stand"
+            },
+            "actions": [
+              {
+                "type": "walk",
+                "to": 1500
+              },
+              {
+                "type": "idle",
+                "duration": 3.8
+              },
+              {
+                "type": "turn",
+                "view": "left",
+                "expression": "surprised"
+              },
+              {
+                "type": "idle",
+                "duration": 6.7,
+                "expression": "angry"
+              },
+              {
+                "type": "walk",
+                "to": -250,
+                "expression": "normal"
+              }
+            ],
+            "layers": [
+              {
+                "type": "pose",
+                "pose": "hold-spear",
+                "joints": [
+                  "shoulderR",
+                  "elbowR"
+                ],
+                "at": 0,
+                "duration": 26
+              }
+            ]
+          },
+          {
+            "character": "kinh-kha",
+            "start": {
+              "x": 150,
+              "view": "right",
+              "pose": "stand",
+              "expression": "angry"
+            },
+            "actions": [
+              {
+                "type": "walk",
+                "to": 960,
+                "style": "sneak"
+              },
+              {
+                "type": "idle",
+                "duration": 0.9
+              },
+              {
+                "type": "pose",
+                "pose": "crouch",
+                "duration": 10.6,
+                "transition": 0.3
+              },
+              {
+                "type": "walk",
+                "to": 2150,
+                "style": "sneak"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lop-canh-2",
+        "duration": 14,
+        "background": {
+          "color": "#e9e3d3",
+          "groundColor": "#c8b99c"
+        },
+        "props": [
+          {
+            "type": "pillar",
+            "x": 470,
+            "front": true
+          },
+          {
+            "type": "pillar",
+            "x": 930,
+            "front": true
+          },
+          {
+            "type": "pillar",
+            "x": 1650
+          }
+        ],
+        "camera": [
+          {
+            "at": 0,
+            "shot": "full",
+            "on": "kinh-kha"
+          },
+          {
+            "at": 7.6,
+            "shot": "medium",
+            "on": [
+              "linh-2",
+              "linh-3"
+            ],
+            "cut": true
+          }
+        ],
+        "sounds": [
+          {
+            "src": "am-thanh/kinh-kha/sfx/gio.mp3",
+            "at": 0,
+            "volume": 0.3,
+            "loop": true
+          }
+        ],
+        "actors": [
+          {
+            "character": "kinh-kha",
+            "start": {
+              "x": -200,
+              "view": "right",
+              "pose": "stand",
+              "expression": "angry"
+            },
+            "actions": [
+              {
+                "type": "run",
+                "to": 450
+              },
+              {
+                "type": "pose",
+                "pose": "crouch",
+                "duration": 1.4,
+                "transition": 0.2
+              },
+              {
+                "type": "run",
+                "to": 910
+              },
+              {
+                "type": "pose",
+                "pose": "crouch",
+                "duration": 1.8,
+                "transition": 0.2
+              },
+              {
+                "type": "jump",
+                "to": 1720,
+                "height": 430,
+                "duration": 1.4
+              },
+              {
+                "type": "run",
+                "to": 2200
+              }
+            ]
+          },
+          {
+            "character": "linh-vang",
+            "id": "linh-2",
+            "weapon": "spear",
+            "start": {
+              "x": 1220,
+              "view": "left",
+              "pose": "stand"
+            },
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 7.8
+              },
+              {
+                "type": "turn",
+                "view": "right",
+                "expression": "surprised"
+              },
+              {
+                "type": "idle",
+                "duration": 1.3
+              },
+              {
+                "type": "turn",
+                "view": "left"
+              },
+              {
+                "type": "idle",
+                "duration": 1
+              },
+              {
+                "type": "pose",
+                "pose": "shrug",
+                "duration": 3
+              }
+            ],
+            "layers": [
+              {
+                "type": "pose",
+                "pose": "hold-spear",
+                "joints": [
+                  "shoulderR",
+                  "elbowR"
+                ],
+                "at": 0,
+                "duration": 10
+              }
+            ]
+          },
+          {
+            "character": "linh-vang",
+            "id": "linh-3",
+            "weapon": "spear",
+            "start": {
+              "x": 1380,
+              "view": "left",
+              "pose": "stand"
+            },
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 8.1
+              },
+              {
+                "type": "turn",
+                "view": "right",
+                "expression": "surprised"
+              },
+              {
+                "type": "idle",
+                "duration": 1.8
+              },
+              {
+                "type": "pose",
+                "pose": "think",
+                "duration": 3.5
+              }
+            ],
+            "layers": [
+              {
+                "type": "pose",
+                "pose": "hold-spear",
+                "joints": [
+                  "shoulderR",
+                  "elbowR"
+                ],
+                "at": 0,
+                "duration": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lop-canh-3",
+        "duration": 4.6,
+        "background": {
+          "color": "#d6c7a8",
+          "groundColor": "#b8a581"
+        },
+        "props": [
+          {
+            "type": "wall",
+            "x": 1550,
+            "width": 760,
+            "height": 430
+          }
+        ],
+        "camera": [
+          {
+            "at": 0,
+            "shot": "full",
+            "on": "kinh-kha"
+          },
+          {
+            "at": 3.2,
+            "shot": "wide",
+            "move": 0.8
+          }
+        ],
+        "actors": [
+          {
+            "character": "kinh-kha",
+            "start": {
+              "x": -200,
+              "view": "right",
+              "pose": "stand",
+              "expression": "angry"
+            },
+            "actions": [
+              {
+                "type": "run",
+                "to": 880
+              },
+              {
+                "type": "pose",
+                "pose": {
+                  "head": -30,
+                  "torso": -4
+                },
+                "duration": 1.4,
+                "transition": 0.3
+              },
+              {
+                "type": "run",
+                "to": 1080
+              },
+              {
+                "type": "jump",
+                "to": 1500,
+                "height": 330,
+                "duration": 1.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dien-rong",
+        "duration": 20,
+        "background": {
+          "color": "#3f1d1d",
+          "groundColor": "#7c2d12"
+        },
+        "props": [
+          {
+            "type": "pillar",
+            "x": 230
+          },
+          {
+            "type": "pillar",
+            "x": 1740
+          },
+          {
+            "type": "banner",
+            "x": 1180,
+            "y": 640,
+            "text": "Tần",
+            "scale": 0.8
+          },
+          {
+            "type": "throne",
+            "x": 1500,
+            "flip": true
+          }
+        ],
+        "camera": [
+          {
+            "at": 0,
+            "shot": "wide"
+          },
+          {
+            "at": 3.2,
+            "shot": "medium",
+            "on": [
+              "tuong-1",
+              "tuong-2",
+              "tuong-3",
+              "tuong-4"
+            ],
+            "cut": true
+          },
+          {
+            "at": 7.5,
+            "x": 1470,
+            "y": 670,
+            "zoom": 3,
+            "cut": true
+          },
+          {
+            "at": 10.8,
+            "shot": "close",
+            "on": "kinh-kha",
+            "cut": true
+          },
+          {
+            "at": 14,
+            "shot": "wide",
+            "cut": true
+          },
+          {
+            "at": 14.1,
+            "shot": "full",
+            "on": [
+              "kinh-kha",
+              "tan-thuy-hoang"
+            ],
+            "move": 4.5
+          }
+        ],
+        "sounds": [
+          {
+            "src": "am-thanh/kinh-kha/sfx/trong-tran.mp3",
+            "at": 0,
+            "volume": 0.35
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/rut-kiem.mp3",
+            "at": 1.2,
+            "volume": 0.9
+          }
+        ],
+        "actors": [
+          {
+            "character": "kinh-kha",
+            "start": {
+              "x": 120,
+              "view": "right",
+              "pose": "stand",
+              "expression": "angry"
+            },
+            "actions": [
+              {
+                "type": "jump",
+                "to": 400,
+                "height": 120,
+                "duration": 0.9
+              },
+              {
+                "type": "pose",
+                "pose": "guard",
+                "duration": 19.1,
+                "weapon": "sword",
+                "transition": 0.4
+              }
+            ]
+          },
+          {
+            "character": "tan-thuy-hoang",
+            "start": {
+              "x": 1500,
+              "view": "left",
+              "pose": "sit-chair",
+              "seat": "prop",
+              "expression": "normal"
+            },
+            "actions": [
+              {
+                "type": "sit",
+                "on": "prop",
+                "duration": 20
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-1",
+            "start": {
+              "x": 760,
+              "view": "left",
+              "pose": "stand",
+              "expression": "normal"
+            },
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 3
+              },
+              {
+                "type": "walk",
+                "to": 680,
+                "keepView": true
+              },
+              {
+                "type": "pose",
+                "pose": "guard",
+                "duration": 16,
+                "expression": "angry"
+              }
+            ],
+            "layers": [
+              {
+                "type": "talk",
+                "at": 3.6,
+                "duration": 3.1,
+                "say": "Kẻ nào dám vào điện!",
+                "gesture": false,
+                "audio": "am-thanh/kinh-kha/dien-rong-tuong-1-01.mp3",
+                "speak": "[shouting] Kẻ nào dám vào điện!"
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-2",
+            "start": {
+              "x": 900,
+              "view": "left",
+              "pose": "stand",
+              "expression": "normal"
+            },
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 3
+              },
+              {
+                "type": "walk",
+                "to": 820,
+                "keepView": true
+              },
+              {
+                "type": "pose",
+                "pose": "guard",
+                "duration": 16,
+                "expression": "angry"
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-3",
+            "start": {
+              "x": 1180,
+              "view": "left",
+              "pose": "stand",
+              "expression": "normal"
+            },
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 3
+              },
+              {
+                "type": "walk",
+                "to": 1100,
+                "keepView": true
+              },
+              {
+                "type": "pose",
+                "pose": "guard",
+                "duration": 16,
+                "expression": "angry"
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-4",
+            "start": {
+              "x": 1320,
+              "view": "left",
+              "pose": "stand",
+              "expression": "normal"
+            },
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 3
+              },
+              {
+                "type": "walk",
+                "to": 1240,
+                "keepView": true
+              },
+              {
+                "type": "pose",
+                "pose": "guard",
+                "duration": 16,
+                "expression": "angry"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "giao-chien",
+        "duration": 30,
+        "background": {
+          "color": "#3f1d1d",
+          "groundColor": "#7c2d12"
+        },
+        "props": [
+          {
+            "type": "pillar",
+            "x": 230
+          },
+          {
+            "type": "pillar",
+            "x": 1740
+          },
+          {
+            "type": "banner",
+            "x": 1180,
+            "y": 640,
+            "text": "Tần",
+            "scale": 0.8
+          },
+          {
+            "type": "throne",
+            "x": 1500,
+            "flip": true
+          }
+        ],
+        "camera": [
+          {
+            "at": 0,
+            "shot": "full",
+            "on": [
+              "kinh-kha",
+              "tuong-1"
+            ]
+          },
+          {
+            "at": 2.3,
+            "shot": "full",
+            "on": [
+              "kinh-kha",
+              "tuong-1"
+            ],
+            "shake": 18
+          },
+          {
+            "at": 6.9,
+            "shot": "full",
+            "on": "kinh-kha",
+            "cut": true
+          },
+          {
+            "at": 8.5,
+            "shot": "full",
+            "on": "kinh-kha",
+            "shake": 14
+          },
+          {
+            "at": 9.5,
+            "shot": "full",
+            "on": "kinh-kha",
+            "shake": 16
+          },
+          {
+            "at": 13,
+            "shot": "close",
+            "on": "kinh-kha",
+            "cut": true
+          },
+          {
+            "at": 17,
+            "shot": "medium",
+            "on": [
+              "kinh-kha",
+              "tuong-4"
+            ],
+            "cut": true
+          },
+          {
+            "at": 21.8,
+            "shot": "medium",
+            "on": [
+              "kinh-kha",
+              "tuong-4"
+            ],
+            "shake": 26
+          },
+          {
+            "at": 26,
+            "shot": "wide",
+            "cut": true
+          }
+        ],
+        "sounds": [
+          {
+            "src": "am-thanh/kinh-kha/sfx/trong-tran.mp3",
+            "at": 0,
+            "volume": 0.3
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/trong-tran.mp3",
+            "at": 12,
+            "volume": 0.3
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/kiem.mp3",
+            "at": 1.4,
+            "volume": 1.0
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/kiem.mp3",
+            "at": 2.15,
+            "volume": 1.0
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/nga.mp3",
+            "at": 2.5,
+            "volume": 0.8
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/kiem.mp3",
+            "at": 8.45,
+            "volume": 1.0
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/nga.mp3",
+            "at": 8.8,
+            "volume": 0.8
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/kiem.mp3",
+            "at": 9.45,
+            "volume": 1.0
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/nga.mp3",
+            "at": 9.8,
+            "volume": 0.8
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/kiem.mp3",
+            "at": 20.2,
+            "volume": 1.0
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/kiem.mp3",
+            "at": 20.9,
+            "volume": 1.0
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/kiem.mp3",
+            "at": 21.7,
+            "volume": 1.0
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/nga.mp3",
+            "at": 22.1,
+            "volume": 0.9
+          }
+        ],
+        "actors": [
+          {
+            "character": "kinh-kha",
+            "actions": [
+              {
+                "type": "pose",
+                "pose": "guard",
+                "duration": 1.1
+              },
+              {
+                "type": "pose",
+                "pose": "block",
+                "duration": 0.6,
+                "transition": 0.1
+              },
+              {
+                "type": "attack",
+                "style": "slash",
+                "to": 450
+              },
+              {
+                "type": "pose",
+                "pose": "guard",
+                "duration": 4.6
+              },
+              {
+                "type": "jump",
+                "to": 960,
+                "height": 430,
+                "duration": 0.9
+              },
+              {
+                "type": "turn",
+                "view": "left"
+              },
+              {
+                "type": "attack",
+                "style": "slash"
+              },
+              {
+                "type": "turn",
+                "view": "right"
+              },
+              {
+                "type": "attack",
+                "style": "stab"
+              },
+              {
+                "type": "pose",
+                "pose": "guard",
+                "duration": 10.1
+              },
+              {
+                "type": "pose",
+                "pose": "block",
+                "duration": 0.7,
+                "transition": 0.1
+              },
+              {
+                "type": "pose",
+                "pose": "block",
+                "duration": 0.7,
+                "transition": 0.1
+              },
+              {
+                "type": "attack",
+                "style": "stab"
+              },
+              {
+                "type": "pose",
+                "pose": "guard",
+                "duration": 2
+              },
+              {
+                "type": "pose",
+                "pose": "stand",
+                "duration": 6,
+                "transition": 1.2,
+                "expression": "normal"
+              }
+            ]
+          },
+          {
+            "character": "tan-thuy-hoang",
+            "actions": [
+              {
+                "type": "sit",
+                "on": "prop",
+                "duration": 30
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-1",
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 0.6
+              },
+              {
+                "type": "run",
+                "to": 540
+              },
+              {
+                "type": "attack",
+                "style": "stab"
+              },
+              {
+                "type": "pose",
+                "pose": "guard",
+                "duration": 0.46
+              },
+              {
+                "type": "fall",
+                "to": 640
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-2",
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 7.9
+              },
+              {
+                "type": "turn",
+                "view": "right"
+              },
+              {
+                "type": "pose",
+                "pose": "guard",
+                "duration": 0.35
+              },
+              {
+                "type": "fall",
+                "to": 700
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-3",
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 9.45
+              },
+              {
+                "type": "fall",
+                "to": 1230
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-4",
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 17
+              },
+              {
+                "type": "walk",
+                "to": 1110,
+                "speed": 80,
+                "keepView": true
+              },
+              {
+                "type": "attack",
+                "style": "stab"
+              },
+              {
+                "type": "attack",
+                "style": "slash"
+              },
+              {
+                "type": "fall",
+                "to": 1260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "doi-mat",
+        "duration": 42.8,
+        "background": {
+          "color": "#3f1d1d",
+          "groundColor": "#7c2d12"
+        },
+        "props": [
+          {
+            "type": "pillar",
+            "x": 230
+          },
+          {
+            "type": "pillar",
+            "x": 1740
+          },
+          {
+            "type": "banner",
+            "x": 1180,
+            "y": 640,
+            "text": "Tần",
+            "scale": 0.8
+          },
+          {
+            "type": "throne",
+            "x": 1500,
+            "flip": true
+          }
+        ],
+        "camera": [
+          {
+            "at": 0,
+            "shot": "full",
+            "on": "kinh-kha"
+          },
+          {
+            "at": 2.05,
+            "cut": true,
+            "x": 1470,
+            "y": 670,
+            "zoom": 3
+          },
+          {
+            "at": 5.65,
+            "cut": true,
+            "shot": "close",
+            "on": "kinh-kha"
+          },
+          {
+            "at": 8.05,
+            "shot": "close",
+            "on": "kinh-kha",
+            "cut": true
+          },
+          {
+            "at": 8.1,
+            "cut": false,
+            "shot": "extreme",
+            "on": "kinh-kha",
+            "move": 2.7
+          },
+          {
+            "at": 11.25,
+            "cut": true,
+            "x": 1450,
+            "y": 700,
+            "zoom": 2.1
+          },
+          {
+            "at": 14.25,
+            "cut": true,
+            "shot": "medium",
+            "on": [
+              "kinh-kha",
+              "tan-thuy-hoang"
+            ]
+          },
+          {
+            "at": 17.45,
+            "cut": true,
+            "x": 1470,
+            "y": 670,
+            "zoom": 3
+          },
+          {
+            "at": 21.45,
+            "cut": true,
+            "x": 1490,
+            "y": 655,
+            "zoom": 4.6
+          },
+          {
+            "at": 24.65,
+            "cut": true,
+            "x": 1470,
+            "y": 670,
+            "zoom": 3
+          },
+          {
+            "at": 26.8,
+            "shot": "extreme",
+            "on": "kinh-kha",
+            "cut": true
+          },
+          {
+            "at": 28.85,
+            "cut": true,
+            "shot": "close",
+            "on": "kinh-kha"
+          },
+          {
+            "at": 31.45,
+            "cut": true,
+            "shot": "close",
+            "on": "kinh-kha"
+          },
+          {
+            "at": 33.8,
+            "shot": "medium",
+            "on": "kinh-kha",
+            "cut": true
+          },
+          {
+            "at": 36.2,
+            "shot": "wide",
+            "cut": true
+          }
+        ],
+        "actors": [
+          {
+            "character": "kinh-kha",
+            "actions": [
+              {
+                "type": "walk",
+                "to": 1240,
+                "expression": "angry"
+              },
+              {
+                "type": "pose",
+                "pose": "point",
+                "duration": 32.2,
+                "transition": 0.3
+              },
+              {
+                "type": "pose",
+                "pose": "stand",
+                "duration": 1.6,
+                "transition": 1.2,
+                "weapon": "none",
+                "expression": "sad"
+              },
+              {
+                "type": "turn",
+                "view": "left"
+              },
+              {
+                "type": "walk",
+                "to": -250,
+                "speed": 150
+              }
+            ],
+            "layers": [
+              {
+                "type": "talk",
+                "at": 5.8,
+                "duration": 1.9,
+                "say": "Ngươi đã giết cả nhà ta!",
+                "gesture": false,
+                "audio": "am-thanh/kinh-kha/doi-mat-kinh-kha-01.mp3",
+                "speak": "[angry] Ngươi đã giết cả nhà ta!"
+              },
+              {
+                "type": "talk",
+                "at": 8.2,
+                "duration": 2.7,
+                "say": "Bộ tộc ta không còn một ai.",
+                "gesture": false,
+                "audio": "am-thanh/kinh-kha/doi-mat-kinh-kha-02.mp3",
+                "speak": "[angry] Bộ tộc ta... không còn một ai."
+              },
+              {
+                "type": "talk",
+                "at": 29.0,
+                "duration": 2.1,
+                "say": "Vậy hãy làm cho xong…",
+                "gesture": false,
+                "audio": "am-thanh/kinh-kha/doi-mat-kinh-kha-03.mp3",
+                "speak": "[sad] Vậy hãy làm cho xong..."
+              },
+              {
+                "type": "talk",
+                "at": 31.6,
+                "duration": 1.7,
+                "say": "…vì những người đã chết.",
+                "gesture": false,
+                "audio": "am-thanh/kinh-kha/doi-mat-kinh-kha-04.mp3",
+                "speak": "[sad] ...vì những người đã chết."
+              }
+            ]
+          },
+          {
+            "character": "tan-thuy-hoang",
+            "actions": [
+              {
+                "type": "sit",
+                "on": "prop",
+                "duration": 37.3
+              },
+              {
+                "type": "nod",
+                "duration": 1.6
+              },
+              {
+                "type": "sit",
+                "on": "prop",
+                "duration": 5
+              }
+            ],
+            "layers": [
+              {
+                "type": "talk",
+                "at": 2.2,
+                "duration": 3.1,
+                "say": "Vượt ba lớp canh chỉ để giết ta?",
+                "gesture": false,
+                "audio": "am-thanh/kinh-kha/doi-mat-tan-thuy-hoang-01.mp3",
+                "speak": "[calm] Vượt ba lớp canh... chỉ để giết ta?"
+              },
+              {
+                "type": "talk",
+                "at": 11.4,
+                "duration": 2.5,
+                "say": "Ta biết. Ta không chối.",
+                "gesture": false,
+                "audio": "am-thanh/kinh-kha/doi-mat-tan-thuy-hoang-02.mp3",
+                "speak": "[calm] Ta biết. Ta không chối."
+              },
+              {
+                "type": "talk",
+                "at": 14.4,
+                "duration": 2.7,
+                "say": "Thiên hạ chia bảy nước, chiến tranh trăm năm.",
+                "gesture": true,
+                "audio": "am-thanh/kinh-kha/doi-mat-tan-thuy-hoang-03.mp3",
+                "speak": "Thiên hạ chia bảy nước, chiến tranh trăm năm."
+              },
+              {
+                "type": "talk",
+                "at": 17.6,
+                "duration": 3.5,
+                "say": "Còn chia cắt, còn máu chảy.",
+                "gesture": true,
+                "audio": "am-thanh/kinh-kha/doi-mat-tan-thuy-hoang-04.mp3",
+                "speak": "Còn chia cắt... còn máu chảy."
+              },
+              {
+                "type": "talk",
+                "at": 21.6,
+                "duration": 2.7,
+                "say": "Chỉ thống nhất mới có thái bình.",
+                "gesture": false,
+                "audio": "am-thanh/kinh-kha/doi-mat-tan-thuy-hoang-05.mp3",
+                "speak": "[slowly] Chỉ thống nhất, mới có thái bình."
+              },
+              {
+                "type": "talk",
+                "at": 24.8,
+                "duration": 1.5,
+                "say": "Và chỉ ta làm được điều đó.",
+                "gesture": false,
+                "audio": "am-thanh/kinh-kha/doi-mat-tan-thuy-hoang-06.mp3",
+                "speak": "Và chỉ ta làm được điều đó."
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-1",
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 42.8
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-2",
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 42.8
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-3",
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 42.8
+              }
+            ]
+          },
+          {
+            "character": "tuong",
+            "id": "tuong-4",
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 42.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cong-thanh",
+        "duration": 10,
+        "background": {
+          "color": "#e0f2fe",
+          "groundColor": "#a8977f"
+        },
+        "props": [
+          {
+            "type": "sun",
+            "x": 380
+          },
+          {
+            "type": "cloud",
+            "x": 820,
+            "scale": 0.8
+          },
+          {
+            "type": "gate",
+            "x": 1350,
+            "width": 900,
+            "height": 420
+          }
+        ],
+        "camera": [
+          {
+            "at": 0,
+            "shot": "wide"
+          },
+          {
+            "at": 6.4,
+            "shot": "close",
+            "on": "kinh-kha",
+            "cut": true
+          }
+        ],
+        "sounds": [
+          {
+            "src": "am-thanh/kinh-kha/sfx/gio.mp3",
+            "at": 0,
+            "volume": 0.35,
+            "loop": true
+          }
+        ],
+        "actors": [
+          {
+            "character": "kinh-kha",
+            "start": {
+              "x": 1350,
+              "view": "left",
+              "pose": "stand",
+              "expression": "sad"
+            },
+            "weapon": "none",
+            "actions": [
+              {
+                "type": "walk",
+                "to": 700,
+                "speed": 120
+              },
+              {
+                "type": "idle",
+                "duration": 0.6
+              },
+              {
+                "type": "turn",
+                "view": "right"
+              },
+              {
+                "type": "idle",
+                "duration": 3.9
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mua-ten",
+        "duration": 15,
+        "background": {
+          "color": "#e0f2fe",
+          "groundColor": "#a8977f"
+        },
+        "props": [
+          {
+            "type": "sun",
+            "x": 380
+          },
+          {
+            "type": "gate",
+            "x": 1350,
+            "width": 900,
+            "height": 420
+          }
+        ],
+        "camera": [
+          {
+            "at": 0,
+            "x": 960,
+            "y": 250,
+            "zoom": 1.6
+          },
+          {
+            "at": 10,
+            "shot": "wide",
+            "cut": true
+          }
+        ],
+        "effects": [
+          {
+            "type": "arrows",
+            "at": 4,
+            "duration": 6,
+            "from": "right",
+            "target": "kinh-kha",
+            "count": 2600,
+            "darken": 0.35
+          }
+        ],
+        "sounds": [
+          {
+            "src": "am-thanh/kinh-kha/sfx/gio.mp3",
+            "at": 0,
+            "volume": 0.3,
+            "loop": true
+          },
+          {
+            "src": "am-thanh/kinh-kha/sfx/ten-rit.mp3",
+            "at": 3.8,
+            "volume": 1.0
+          }
+        ],
+        "actors": [
+          {
+            "character": "kinh-kha",
+            "start": {
+              "x": 700,
+              "view": "right",
+              "pose": "stand",
+              "expression": "sad"
+            },
+            "weapon": "none",
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 10
+              },
+              {
+                "type": "expression",
+                "duration": 5,
+                "expression": "surprised"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "het",
+        "duration": 2.5,
+        "background": {
+          "color": "#000000",
+          "groundColor": null
+        },
+        "actors": []
+      }
+    ]
+  }
+}
