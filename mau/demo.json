@@ -1,0 +1,379 @@
+{
+  "ten": "demo",
+  "nguon": {
+    "repo": "nguyenhoangan1205/nguoi-que-video",
+    "nhanh": "claude/upbeat-davinci-i8q4v1",
+    "commit": "6cc86b50a68d219f1194aeb8e16c24006ae0ca92"
+  },
+  "gui_luc": "2026-10-21T03:14:14Z",
+  "phim": {
+    "title": "Một ngày đi dạo",
+    "aspect": "16:9",
+    "fade": 0.35,
+    "voices": {
+      "tuan": "gb30mYs9RQJGV3jqCOM2",
+      "lan": "DvG3I1kDzdBY3u4EzYh6",
+      "ong-ba": "qLk6yIwQI3GT5JfYLzBU",
+      "be-bi": "aHC3XZOMg3HZuXVYK6hy"
+    },
+    "scenes": [
+      {
+        "id": "cong-vien-gap-nhau",
+        "caption": "Buổi sáng ở công viên",
+        "background": {
+          "color": "#e0f2fe",
+          "groundColor": "#c7e9b0"
+        },
+        "props": [
+          {
+            "type": "sun",
+            "x": 1680
+          },
+          {
+            "type": "cloud",
+            "x": 420
+          },
+          {
+            "type": "cloud",
+            "x": 1150,
+            "y": 150,
+            "scale": 0.8
+          },
+          {
+            "type": "tree",
+            "x": 180
+          },
+          {
+            "type": "tree",
+            "x": 1780,
+            "scale": 0.9
+          },
+          {
+            "type": "flower",
+            "x": 980
+          },
+          {
+            "type": "flower",
+            "x": 1040,
+            "color": "#a78bfa"
+          }
+        ],
+        "actors": [
+          {
+            "character": "tuan",
+            "start": {
+              "x": -150,
+              "view": "right"
+            },
+            "actions": [
+              {
+                "type": "walk",
+                "to": 650
+              },
+              {
+                "type": "idle",
+                "duration": 4.4,
+                "expression": "happy"
+              },
+              {
+                "type": "nod",
+                "duration": 0.8
+              },
+              {
+                "type": "talk",
+                "duration": 1.8,
+                "say": "Đi chứ! Trời đẹp quá!",
+                "audio": "am-thanh/demo/cong-vien-gap-nhau-tuan-01.mp3"
+              }
+            ],
+            "layers": [
+              {
+                "type": "wave",
+                "at": 3.6,
+                "duration": 1.2,
+                "say": "Chào Lan!",
+                "audio": "am-thanh/demo/cong-vien-gap-nhau-tuan-02.mp3"
+              }
+            ]
+          },
+          {
+            "character": "lan",
+            "start": {
+              "x": 1350,
+              "view": "left"
+            },
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 3.2
+              },
+              {
+                "type": "wave",
+                "duration": 1.6,
+                "expression": "happy"
+              },
+              {
+                "type": "talk",
+                "duration": 2.2,
+                "say": "Chào Tuấn! Đi dạo không?",
+                "audio": "am-thanh/demo/cong-vien-gap-nhau-lan-01.mp3"
+              },
+              {
+                "type": "idle",
+                "duration": 3.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cung-di-dao",
+        "background": {
+          "color": "#e0f2fe",
+          "groundColor": "#c7e9b0"
+        },
+        "props": [
+          {
+            "type": "sun",
+            "x": 1680
+          },
+          {
+            "type": "cloud",
+            "x": 600,
+            "y": 180
+          },
+          {
+            "type": "tree",
+            "x": 380
+          },
+          {
+            "type": "bench",
+            "x": 900
+          },
+          {
+            "type": "flower",
+            "x": 1450,
+            "color": "#fb923c"
+          }
+        ],
+        "actors": [
+          {
+            "character": "tuan",
+            "actions": [
+              {
+                "type": "walk",
+                "to": 1250
+              },
+              {
+                "type": "pose",
+                "pose": "cheer",
+                "duration": 1.4,
+                "expression": "happy"
+              },
+              {
+                "type": "idle",
+                "duration": 3
+              },
+              {
+                "type": "talk",
+                "duration": 1.9,
+                "say": "Đi thôi! Qua nhà ông Ba.",
+                "audio": "am-thanh/demo/cung-di-dao-tuan-01.mp3"
+              }
+            ]
+          },
+          {
+            "character": "lan",
+            "actions": [
+              {
+                "type": "walk",
+                "to": 1600
+              },
+              {
+                "type": "pose",
+                "pose": "surprised",
+                "duration": 1.2,
+                "expression": "surprised"
+              },
+              {
+                "type": "talk",
+                "duration": 1.5,
+                "say": "Ơ, Bé Bi!",
+                "expression": "happy",
+                "audio": "am-thanh/demo/cung-di-dao-lan-01.mp3"
+              },
+              {
+                "type": "idle",
+                "duration": 4.5
+              }
+            ]
+          },
+          {
+            "character": "be-bi",
+            "start": {
+              "x": 2100,
+              "view": "left"
+            },
+            "actions": [
+              {
+                "type": "idle",
+                "duration": 1.4
+              },
+              {
+                "type": "run",
+                "to": 1820
+              },
+              {
+                "type": "jump",
+                "expression": "happy"
+              },
+              {
+                "type": "dance",
+                "duration": 2
+              },
+              {
+                "type": "talk",
+                "duration": 1.4,
+                "say": "Cho em đi với!",
+                "audio": "am-thanh/demo/cung-di-dao-be-bi-01.mp3"
+              },
+              {
+                "type": "idle",
+                "duration": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nha-ong-ba",
+        "caption": "Nhà ông Ba",
+        "background": {
+          "color": "#fef3c7",
+          "groundColor": "#e7dcc3"
+        },
+        "props": [
+          {
+            "type": "house",
+            "x": 1560
+          },
+          {
+            "type": "tree",
+            "x": 230
+          },
+          {
+            "type": "cloud",
+            "x": 900,
+            "y": 170,
+            "scale": 0.7
+          }
+        ],
+        "actors": [
+          {
+            "character": "ong-ba",
+            "start": {
+              "x": 1200,
+              "view": "left",
+              "pose": "sit-chair"
+            },
+            "actions": [
+              {
+                "type": "sit",
+                "duration": 4.9
+              },
+              {
+                "type": "talk",
+                "duration": 1.9,
+                "say": "Các cháu vào nhà uống trà nào!",
+                "expression": "happy",
+                "audio": "am-thanh/demo/nha-ong-ba-ong-ba-01.mp3"
+              },
+              {
+                "type": "nod",
+                "duration": 1
+              },
+              {
+                "type": "idle",
+                "duration": 1
+              }
+            ]
+          },
+          {
+            "character": "tuan",
+            "start": {
+              "x": -120,
+              "view": "right",
+              "pose": "stand",
+              "expression": "normal"
+            },
+            "actions": [
+              {
+                "type": "walk",
+                "to": 650
+              },
+              {
+                "type": "bow",
+                "say": "Chúng cháu chào ông ạ!",
+                "audio": "am-thanh/demo/nha-ong-ba-tuan-01.mp3"
+              },
+              {
+                "type": "idle",
+                "duration": 4,
+                "expression": "happy"
+              }
+            ]
+          },
+          {
+            "character": "lan",
+            "start": {
+              "x": -320,
+              "view": "right",
+              "pose": "stand"
+            },
+            "actions": [
+              {
+                "type": "walk",
+                "to": 450
+              },
+              {
+                "type": "wave",
+                "duration": 1.5,
+                "expression": "happy"
+              },
+              {
+                "type": "idle",
+                "duration": 3.5
+              }
+            ]
+          },
+          {
+            "character": "be-bi",
+            "start": {
+              "x": -520,
+              "view": "right",
+              "pose": "stand"
+            },
+            "actions": [
+              {
+                "type": "run",
+                "to": 870
+              },
+              {
+                "type": "jump"
+              },
+              {
+                "type": "pose",
+                "pose": "cheer",
+                "duration": 1.5
+              },
+              {
+                "type": "idle",
+                "duration": 2.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
