@@ -149,9 +149,11 @@ jobs:
           CHAY_THU: ${{ steps.phieu.outputs.chay_thu }}
         run: |
           d="app/phim-projects/$DU_AN"
-          if [ "$CHAY_THU" = "true" ]; then files="$d/chay-thu-10.mp4"; else files=$(ls "$d"/songvui_viet-*.mp4 "$d"/*.srt 2>/dev/null); fi
+          shopt -s nullglob
+          # Phim in sẵn phụ đề thì không có file .srt: nullglob để danh sách rỗng thay vì báo lỗi.
+          if [ "$CHAY_THU" = "true" ]; then files=("$d/chay-thu-10.mp4"); else files=("$d"/songvui_viet-*.mp4 "$d"/*.srt); fi
           tag="$TEN-${{ github.run_number }}"
-          gh release create "$tag" $files \
+          gh release create "$tag" "${files[@]}" \
             --repo "${{ github.repository }}" \
             --title "$TEN (phim vẽ tay, nhánh $NHANH, #${{ github.run_number }})" \
             --notes "Phim vẽ tay \`$DU_AN\` từ $REPO, nhánh \`$NHANH\`, commit ${COMMIT:0:7}.$([ "$CHAY_THU" = true ] && echo ' Bản chạy thử 10% đầu.')"
