@@ -1,6 +1,6 @@
 # nguoi-que-render
 
-Máy render cho [nguoi-que-video](https://github.com/nguyenhoangan1205/nguoi-que-video).
+Máy render cho [nguoi-que-video](https://github.com/nguyenhoangan1205/nguoi-que-video) và [lam-phim-ve-tay](https://github.com/nguyenhoangan1205/lam-phim-ve-tay) (phim vẽ tay, xem mục cuối).
 
 1. Ở `nguoi-que-video`, nhánh nào push file `phim/<ten>.json` mới hoặc đã sửa thì workflow **Gửi sang render** tự đóng gói thành phiếu `jobs/<ten>.json` và đẩy sang repo này.
 2. Repo này thấy phiếu mới thì tự render (lấy engine, nhân vật, giọng nói đúng commit đã gửi).
@@ -49,6 +49,30 @@ Có sẵn phiếu mẫu [`mau/demo.json`](mau/demo.json): phim demo "Một ngày
 
 Lần chạy báo lỗi: bấm vào lần chạy đó → job **render** → xem bước có dấu ❌.
 
+## Phim vẽ tay (lam-phim-ve-tay)
+
+Workflow **Render phim vẽ tay** nhận phiếu trong `jobs-ve-tay/<id>.json`:
+
+```json
+{
+  "ten": "2026-10-22-thu-09",
+  "nguon": { "repo": "nguyenhoangan1205/lam-phim-ve-tay", "nhanh": "main", "commit": "<sha>" },
+  "du_an": "2026-10-22-thu-09",
+  "chay_thu": false,
+  "phu_de": true
+}
+```
+
+- `du_an`: thư mục dự án trong `phim-projects/` của lam-phim-ve-tay (có `project.json`, hình và file giọng `.mp3`).
+- `chay_thu: true`: chỉ render 10% đầu (`chay-thu-10.mp4`) để xem thử.
+- `phu_de: false`: không in phụ đề, đăng kèm file `.srt`.
+
+Workflow lấy app ở đúng commit, đổi giọng `.mp3` sang `.wav` (`server/chuan_bi_render.py`), chạy server render của app,
+thêm hiệu ứng âm thanh nếu dự án có `them_hieu_ung.py`, rồi đăng `songvui_viet-<ten>.mp4` lên Releases (`<ten>-<số>`).
+
+Gửi phiếu: ở lam-phim-ve-tay, commit file `phim-projects/<id>/render.json` (vd. `{"chay_thu": false, "phu_de": true}`)
+rồi push, workflow **Gửi sang render** bên đó tự viết phiếu sang đây. Hoặc tự tải phiếu lên `jobs-ve-tay/` như phim người que.
+
 ## Cài đặt (một lần)
 
-Cần một token tên `RENDER_TOKEN` đặt ở **cả hai repo** (Settings → Secrets and variables → Actions → New repository secret). Tạo token tại GitHub → Settings → Developer settings → Fine-grained tokens, chọn hai repo `nguoi-que-video` và `nguoi-que-render`, quyền **Contents: Read and write**.
+Cần một token tên `RENDER_TOKEN` đặt ở **cả ba repo** (Settings → Secrets and variables → Actions → New repository secret). Tạo token tại GitHub → Settings → Developer settings → Fine-grained tokens, chọn các repo `nguoi-que-video`, `lam-phim-ve-tay` và `nguoi-que-render`, quyền **Contents: Read and write**.

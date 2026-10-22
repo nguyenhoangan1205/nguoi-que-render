@@ -1,0 +1,162 @@
+# Nhận phiếu render trong jobs-ve-tay/*.json (do lam-phim-ve-tay gửi sang), render MP4 bằng app làm phim vẽ tay
+# và đăng lên Releases.
+# Phiếu: { "ten", "nguon": { "repo", "nhanh", "commit" }, "du_an": "<id trong phim-projects>",
+#          "chay_thu": false, "phu_de": true }
+# Cần secret RENDER_TOKEN: token đọc được repo lam-phim-ve-tay.
+
+name: Render phim vẽ tay
+
+on:
+  push:
+    paths:
+      - "jobs-ve-tay/*.json"
+  workflow_dispatch:
+    inputs:
+      phieu:
+        description: "Phiếu cần render lại (ví dụ jobs-ve-tay/2026-10-22-thu-09.json, nhiều phiếu cách nhau bằng dấu cách)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  chon:
+    runs-on: ubuntu-latest
+    outputs:
+      phieu: ${{ steps.chon.outputs.phieu }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: chon
+        env:
+          NHAP: ${{ inputs.phieu }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            files="$NHAP"
+          else
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then BEFORE=HEAD~1; fi
+            git fetch --depth=1 origin "$BEFORE" 2>/dev/null || true
+            files=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'jobs-ve-tay/*.json')
+          fi
+          echo "phieu=$(printf '%s\n' $files | jq -R . | jq -sc 'map(select(length>0))')" >> "$GITHUB_OUTPUT"
+          echo "Phiếu cần render: $files"
+
+  render:
+    needs: chon
+    if: needs.chon.outputs.phieu != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        phieu: ${{ fromJson(needs.chon.outputs.phieu) }}
+    name: render ${{ matrix.phieu }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: render
+
+      - name: Đọc phiếu
+        id: phieu
+        run: |
+          p="render/${{ matrix.phieu }}"
+          echo "ten=$(jq -r .ten "$p")" >> "$GITHUB_OUTPUT"
+          echo "repo=$(jq -r .nguon.repo "$p")" >> "$GITHUB_OUTPUT"
+          echo "nhanh=$(jq -r .nguon.nhanh "$p")" >> "$GITHUB_OUTPUT"
+          echo "commit=$(jq -r .nguon.commit "$p")" >> "$GITHUB_OUTPUT"
+          echo "du_an=$(jq -r '.du_an // .ten' "$p")" >> "$GITHUB_OUTPUT"
+          echo "chay_thu=$(jq -r '.chay_thu // false' "$p")" >> "$GITHUB_OUTPUT"
+          echo "phu_de=$(jq -r 'if .phu_de == null then true else .phu_de end' "$p")" >> "$GITHUB_OUTPUT"
+
+      - name: Kiểm tra token
+        env:
+          T: ${{ secrets.RENDER_TOKEN }}
+        run: |
+          if [ -z "$T" ]; then
+            echo "::error::Thiếu secret RENDER_TOKEN (Settings -> Secrets and variables -> Actions)."
+            exit 1
+          fi
+
+      - name: Lấy app đúng commit đã gửi
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.phieu.outputs.repo }}
+          ref: ${{ steps.phieu.outputs.commit }}
+          token: ${{ secrets.RENDER_TOKEN }}
+          path: app
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Cài ffmpeg và thư viện cho Chrome
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg libnss3 libdbus-1-3 libatk1.0-0 libatk-bridge2.0-0 libgbm1 libxrandr2 \
+            libxkbcommon0 libxfixes3 libxcomposite1 libxdamage1 libpango-1.0-0 libcairo2 libcups2 libasound2t64
+
+      - name: Cài thư viện app và chuẩn bị giọng đọc
+        working-directory: app
+        run: |
+          npm ci --no-audit --no-fund
+          python3 server/chuan_bi_render.py "${{ steps.phieu.outputs.du_an }}"
+
+      - name: Render
+        working-directory: app
+        env:
+          ID: ${{ steps.phieu.outputs.du_an }}
+          PREVIEW: ${{ steps.phieu.outputs.chay_thu }}
+          CAPTIONS: ${{ steps.phieu.outputs.phu_de }}
+        run: |
+          node server/render-server.mts > render-server.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf http://127.0.0.1:3010/api/phim/config > /dev/null && break; sleep 2; done
+          r=$(curl -sf -X POST "http://127.0.0.1:3010/api/phim/projects/$ID/render" -H 'Content-Type: application/json' \
+                -d "{\"showCaptions\":$CAPTIONS,\"preview\":$PREVIEW}")
+          echo "$r"
+          job=$(echo "$r" | jq -r .id)
+          while :; do
+            s=$(curl -sf "http://127.0.0.1:3010/api/render/$job") || { cat render-server.log; exit 1; }
+            echo "$s"
+            case "$(echo "$s" | jq -r .status)" in
+              done) break ;;
+              error) cat render-server.log; exit 1 ;;
+            esac
+            sleep 15
+          done
+
+      - name: Thêm hiệu ứng âm thanh
+        if: steps.phieu.outputs.chay_thu != 'true'
+        working-directory: app/phim-projects/${{ steps.phieu.outputs.du_an }}
+        run: |
+          v=$(ls songvui_viet-*.mp4 | head -1)
+          if [ -f them_hieu_ung.py ] && [ -n "$v" ]; then
+            python3 them_hieu_ung.py "$v" "/tmp/$v" && mv "/tmp/$v" "$v"
+          fi
+          ls -la *.mp4
+
+      - name: Đăng lên Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TEN: ${{ steps.phieu.outputs.ten }}
+          DU_AN: ${{ steps.phieu.outputs.du_an }}
+          NHANH: ${{ steps.phieu.outputs.nhanh }}
+          COMMIT: ${{ steps.phieu.outputs.commit }}
+          REPO: ${{ steps.phieu.outputs.repo }}
+          CHAY_THU: ${{ steps.phieu.outputs.chay_thu }}
+        run: |
+          d="app/phim-projects/$DU_AN"
+          if [ "$CHAY_THU" = "true" ]; then files="$d/chay-thu-10.mp4"; else files=$(ls "$d"/songvui_viet-*.mp4 "$d"/*.srt 2>/dev/null); fi
+          tag="$TEN-${{ github.run_number }}"
+          gh release create "$tag" $files \
+            --repo "${{ github.repository }}" \
+            --title "$TEN (phim vẽ tay, nhánh $NHANH, #${{ github.run_number }})" \
+            --notes "Phim vẽ tay \`$DU_AN\` từ $REPO, nhánh \`$NHANH\`, commit ${COMMIT:0:7}.$([ "$CHAY_THU" = true ] && echo ' Bản chạy thử 10% đầu.')"
+          echo "### $TEN: https://github.com/${{ github.repository }}/releases/tag/$tag" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Nhật ký server render
+        if: failure()
+        run: cat app/render-server.log || true
