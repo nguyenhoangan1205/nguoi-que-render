@@ -1,8 +1,13 @@
 {
   "ten": "2026-10-22-thu-14",
-  "nguon": { "repo": "nguyenhoangan1205/lam-phim-ve-tay", "nhanh": "claude/vibrant-ramanujan-teq7dn", "commit": "62801b3b2801e0a3aeedf38efc72e82194c70535" },
-  "gui_luc": "2026-10-23T04:25:34Z",
+  "nguon": {
+    "repo": "nguyenhoangan1205/lam-phim-ve-tay",
+    "nhanh": "claude/vibrant-ramanujan-teq7dn",
+    "commit": "62801b3b2801e0a3aeedf38efc72e82194c70535"
+  },
+  "gui_luc": "2026-10-23T04:28:19Z",
   "du_an": "2026-10-22-thu-14",
-  "chay_thu": true,
-  "phu_de": true
+  "chay_thu": false,
+  "phu_de": true,
+  "lan": 2
 }
