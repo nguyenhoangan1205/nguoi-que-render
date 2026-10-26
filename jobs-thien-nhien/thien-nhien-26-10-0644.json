@@ -1,0 +1,51 @@
+{
+  "ten": "thien-nhien-26-10-0644",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "09d50939da5ccd461315ccd5d5792d77edbf0710"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-26-10-0644",
+  "phim": [
+    {
+      "ten_phim": "khe-suoi-reu-phong-26-10",
+      "preset": "khe-suoi-reu",
+      "tieu_de": "Khe Suối Rêu Phong",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "khe-suoi-reu-phong-26-10.tar.gz"
+    },
+    {
+      "ten_phim": "mua-giong-dai-ngan-26-10",
+      "preset": "mua-rung-dong",
+      "tieu_de": "Mưa Giông Đại Ngàn",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "mua-giong-dai-ngan-26-10.tar.gz"
+    },
+    {
+      "ten_phim": "mua-rung-26-10",
+      "preset": "mua-rung",
+      "tieu_de": "Mưa Rừng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "mua-rung-26-10.tar.gz"
+    },
+    {
+      "ten_phim": "rung-ben-bo-suoi-26-10",
+      "preset": "rung-bo-suoi",
+      "tieu_de": "Rừng Bên Bờ Suối",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-ben-bo-suoi-26-10.tar.gz"
+    },
+    {
+      "ten_phim": "suoi-giua-rung-sau-26-10",
+      "preset": "suoi-rung-sau",
+      "tieu_de": "Suối Giữa Rừng Sâu",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "suoi-giua-rung-sau-26-10.tar.gz"
+    }
+  ]
+}
