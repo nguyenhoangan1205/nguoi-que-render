@@ -132,7 +132,7 @@ jobs:
         if: steps.phieu.outputs.chay_thu != 'true'
         working-directory: app/phim-projects/${{ steps.phieu.outputs.du_an }}
         run: |
-          v=$(ls songvui_viet-*.mp4 | head -1)
+          v=$(ls -t *.mp4 | grep -v "^chay-thu" | head -1)
           if [ -f them_hieu_ung.py ] && [ -n "$v" ]; then
             python3 them_hieu_ung.py "$v" "/tmp/$v" && mv "/tmp/$v" "$v"
           fi
@@ -151,7 +151,10 @@ jobs:
           d="app/phim-projects/$DU_AN"
           shopt -s nullglob
           # Phim in sẵn phụ đề thì không có file .srt: nullglob để danh sách rỗng thay vì báo lỗi.
-          if [ "$CHAY_THU" = "true" ]; then files=("$d/chay-thu-10.mp4"); else files=("$d"/songvui_viet-*.mp4 "$d"/*.srt); fi
+          if [ "$CHAY_THU" = "true" ]; then files=("$d/chay-thu-10.mp4"); else
+            # Phim tên <ten-phim>-<ngay>-<thang>.mp4 (bản cũ: songvui_viet-<ten>.mp4); bỏ qua bản chạy thử.
+            files=(); for f in "$d"/*.mp4 "$d"/*.srt; do [[ "$(basename "$f")" == chay-thu-* ]] || files+=("$f"); done
+          fi
           tag="$TEN-${{ github.run_number }}"
           gh release create "$tag" "${files[@]}" \
             --repo "${{ github.repository }}" \
