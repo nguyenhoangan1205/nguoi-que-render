@@ -113,7 +113,8 @@ jobs:
           MAX_MB: ${{ matrix.phim.max_mb }}
         run: |
           size=$(stat -c %s "$TEN.mp4")
-          if [ -n "$MAX_MB" ] && [ "$MAX_MB" != "null" ] && [ "$size" -gt $(( MAX_MB * 1024 * 1024 )) ]; then
+          # max_mb có thể là số thập phân (vd. 48.0) nên so sánh bằng python thay vì $(( )).
+          if [ -n "$MAX_MB" ] && [ "$MAX_MB" != "null" ] && python3 -c "import sys; sys.exit(0 if $size > $MAX_MB * 1048576 else 1)"; then
             dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$TEN.mp4")
             kbps=$(python3 -c "print(int($MAX_MB * 8 * 1024 * 0.96 / $dur - 128))")
             echo "Nén xuống ${MAX_MB}MB (video ${kbps}kbps)"
