@@ -6,6 +6,8 @@ Máy render cho [nguoi-que-video](https://github.com/nguyenhoangan1205/nguoi-que
 2. Repo này thấy phiếu mới thì tự render (lấy engine, nhân vật, giọng nói đúng commit đã gửi).
 3. Xong, video MP4 và bảng phân cảnh PNG nằm ở **Releases**, mỗi lần render một bản (`<ten>-<số>`).
 
+Mọi phim đều được đóng logo **Sống Vui** mờ 30% ở góc trên bên phải (file logo ở [`logo/`](logo)). Phim của `nguoi-que-video` được đóng logo ở bước **ghep**; phim vẽ tay đã có logo sẵn từ app `lam-phim-ve-tay`.
+
 ## Phim 3D: render song song
 
 Phim 3D (file phim có `"engine": "3d"`) vẽ bằng CPU nên chậm, khoảng 2,5 giây một khung. Workflow chia phim thành **8 đoạn**, mỗi đoạn render trên một máy riêng cùng lúc. Job **ghep** nối các đoạn với tiếng rồi đăng lên Releases. Cảnh 43 giây mất khoảng 10 phút thay vì gần 1 giờ.

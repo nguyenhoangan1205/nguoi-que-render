@@ -190,6 +190,20 @@ jobs:
           fi
           ffprobe -v error -show_entries format=duration,size -of default=nw=1 "$TEN.mp4"
 
+      # Phim vẽ tay (lam-phim-ve-tay) đã có logo sẵn trong khung hình nên không qua bước này.
+      - name: Đóng logo Sống Vui
+        working-directory: out
+        env:
+          TEN: ${{ steps.phieu.outputs.ten }}
+        run: |
+          # Logo mờ 30% ở góc trên bên phải: rộng 1/5 cạnh ngắn của khung, cách mép 1/25.
+          IFS=, read W H < <(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 "$TEN.mp4")
+          m=$(( W < H ? W : H )); lw=$(( m / 5 / 2 * 2 )); pad=$(( m / 25 ))
+          ffmpeg -y -v error -i "$TEN.mp4" -i ../render/logo/logo-song-vui.png -filter_complex \
+            "[1:v]scale=$lw:-1,format=rgba,colorchannelmixer=aa=0.3[l];[0:v][l]overlay=x=W-w-$pad:y=$pad[v]" \
+            -map "[v]" -map 0:a? -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -c:a copy -movflags +faststart logo.mp4
+          mv logo.mp4 "$TEN.mp4"
+
       - name: Đăng lên Releases
         env:
           GH_TOKEN: ${{ github.token }}
