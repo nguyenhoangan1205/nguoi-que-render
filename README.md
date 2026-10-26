@@ -70,7 +70,7 @@ Workflow **Render phim vẽ tay** nhận phiếu trong `jobs-ve-tay/<id>.json`:
 - `phu_de: false`: không in phụ đề, đăng kèm file `.srt`.
 
 Workflow lấy app ở đúng commit, đổi giọng `.mp3` sang `.wav` (`server/chuan_bi_render.py`), chạy server render của app,
-thêm hiệu ứng âm thanh nếu dự án có `them_hieu_ung.py`, rồi đăng `songvui_viet-<ten>.mp4` lên Releases (`<ten>-<số>`).
+thêm hiệu ứng âm thanh nếu dự án có `them_hieu_ung.py`, rồi đăng `<ten-phim>-<ngay>-<thang>.mp4` (ngày render, giờ Việt Nam) lên Releases (`<ten>-<số>`).
 
 Gửi phiếu: ở lam-phim-ve-tay, commit file `phim-projects/<id>/render.json` (vd. `{"chay_thu": false, "phu_de": true}`)
 rồi push, workflow **Gửi sang render** bên đó tự viết phiếu sang đây. Hoặc tự tải phiếu lên `jobs-ve-tay/` như phim người que.
