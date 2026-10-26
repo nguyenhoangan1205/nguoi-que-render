@@ -75,6 +75,29 @@ thêm hiệu ứng âm thanh nếu dự án có `them_hieu_ung.py`, rồi đăng
 Gửi phiếu: ở lam-phim-ve-tay, commit file `phim-projects/<id>/render.json` (vd. `{"chay_thu": false, "phu_de": true}`)
 rồi push, workflow **Gửi sang render** bên đó tự viết phiếu sang đây. Hoặc tự tải phiếu lên `jobs-ve-tay/` như phim người que.
 
+## Phim thiên nhiên (thien-nhien-hung-vy)
+
+Workflow **Render thiên nhiên** nhận phiếu trong `jobs-thien-nhien/<ten>.json`:
+
+```json
+{
+  "ten": "thien-nhien-26-10-15",
+  "nguon": { "repo": "nguyenhoangan1205/thien-nhien-hung-vy", "nhanh": "main", "commit": "<sha>" },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-26-10-15",
+  "phim": [ { "ten_phim": "mua-rung-26-10", "goi": "mua-rung-26-10.tar.gz", "tieu_de": "Mưa Rừng", "max_mb": 28, "intro_end": 5.0 } ]
+}
+```
+
+- `thien-nhien-hung-vy` (workflow **Chuẩn bị & gửi render**) tìm cảnh quay, tạo tiếng và nhạc, dựng project Hyperframes,
+  đóng mỗi phim thành một gói `.tar.gz`, đẩy các gói lên nhánh tạm `nguyen-lieu/<ten>` của repo này rồi viết phiếu.
+- Ở đây, **mỗi phim render trên một máy riêng** cùng lúc, đóng logo Sống Vui (mờ 30%, góc trên phải; hiện sau khi
+  tiêu đề mở đầu mờ đi), nén cho vừa `max_mb`, rồi đăng tất cả lên một bản Releases `<ten>-<số>`:
+  `<ten-phim>-<ngay>-<thang>.mp4` kèm `<ten-phim>-<ngay>-<thang>-nguon.txt` (tác giả các clip).
+- Đăng xong thì nhánh `nguyen-lieu/<ten>` tự bị xoá.
+
+Để `thien-nhien-hung-vy` tự gửi phiếu, đặt secret `RENDER_TOKEN` ở repo đó (token có quyền Contents: Read and write
+trên `nguoi-que-render`).
+
 ## Cài đặt (một lần)
 
 Cần một token tên `RENDER_TOKEN` đặt ở **cả ba repo** (Settings → Secrets and variables → Actions → New repository secret). Tạo token tại GitHub → Settings → Developer settings → Fine-grained tokens, chọn các repo `nguoi-que-video`, `lam-phim-ve-tay` và `nguoi-que-render`, quyền **Contents: Read and write**.

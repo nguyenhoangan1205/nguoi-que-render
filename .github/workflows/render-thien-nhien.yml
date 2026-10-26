@@ -1,0 +1,167 @@
+# Nhận phiếu render trong jobs-thien-nhien/*.json (do thien-nhien-hung-vy gửi sang), render các phim thiên nhiên
+# song song (mỗi phim một máy), đóng logo Sống Vui, nén cho vừa dung lượng và đăng lên Releases.
+# Phiếu: { "ten", "nguon": { "repo", "nhanh", "commit" }, "nguyen_lieu": "<nhánh chứa các gói .tar.gz>",
+#          "phim": [ { "ten_phim", "goi", "tieu_de", "max_mb", "intro_end" } ] }
+# Mỗi gói là một project Hyperframes (index.html + assets/scene.mp4 đã trộn tiếng + render.json + nguon-video.txt).
+
+name: Render thiên nhiên
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "jobs-thien-nhien/*.json"
+  workflow_dispatch:
+    inputs:
+      phieu:
+        description: "Phiếu cần render lại (vd. jobs-thien-nhien/thien-nhien-26-10-15.json)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  chon:
+    runs-on: ubuntu-latest
+    outputs:
+      phim: ${{ steps.chon.outputs.phim }}
+      phieu: ${{ steps.chon.outputs.phieu }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: chon
+        env:
+          NHAP: ${{ inputs.phieu }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            files="$NHAP"
+          else
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then BEFORE=HEAD~1; fi
+            git fetch --depth=1 origin "$BEFORE" 2>/dev/null || true
+            files=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'jobs-thien-nhien/*.json')
+          fi
+          # Mỗi phim trong mỗi phiếu là một máy render.
+          phim=$(for f in $files; do jq -c --arg p "$f" '.nguyen_lieu as $nl | .phim[] | . + {phieu: $p, nguyen_lieu: $nl}' "$f"; done | jq -sc .)
+          echo "phim=$phim" >> "$GITHUB_OUTPUT"
+          echo "phieu=$(printf '%s\n' $files | jq -R . | jq -sc 'map(select(length>0))')" >> "$GITHUB_OUTPUT"
+          echo "Phim cần render:"; echo "$phim" | jq -r '.[] | "- \(.ten_phim) (\(.phieu))"'
+
+  render:
+    needs: chon
+    if: needs.chon.outputs.phim != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        phim: ${{ fromJson(needs.chon.outputs.phim) }}
+    name: render ${{ matrix.phim.ten_phim }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: render
+          sparse-checkout: logo
+
+      - name: Lấy nguyên liệu
+        env:
+          NHANH: ${{ matrix.phim.nguyen_lieu }}
+          GOI: ${{ matrix.phim.goi }}
+        run: |
+          git -C render fetch --depth 1 origin "$NHANH"
+          git -C render show "FETCH_HEAD:$GOI" > goi.tar.gz
+          mkdir -p du-an && tar -xzf goi.tar.gz -C du-an
+          ls -la du-an/*/
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Cài ffmpeg
+        run: |
+          curl -sL https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz | tar -xJ -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/ffmpeg-master-latest-linux64-gpl/bin" >> "$GITHUB_PATH"
+
+      - name: Render (Hyperframes)
+        env:
+          TEN: ${{ matrix.phim.ten_phim }}
+        run: |
+          mkdir -p out
+          npx -y hyperframes render "du-an/$TEN" -o "$PWD/out/$TEN.mp4" -q delivery --crf 20 --quiet
+          ffprobe -v error -show_entries format=duration,size -of default=nw=1 "out/$TEN.mp4"
+
+      - name: Đóng logo Sống Vui
+        working-directory: out
+        env:
+          TEN: ${{ matrix.phim.ten_phim }}
+          INTRO: ${{ matrix.phim.intro_end }}
+        run: |
+          # Cùng quy cách các phim khác: mờ 30%, góc trên phải, rộng 1/5 cạnh ngắn, cách mép 1/25.
+          # Riêng phim thiên nhiên: logo hiện dần sau khi tiêu đề mở đầu mờ đi (giây $INTRO) để không đè chữ.
+          IFS=, read W H < <(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 "$TEN.mp4")
+          m=$(( W < H ? W : H )); lw=$(( m / 5 / 2 * 2 )); pad=$(( m / 25 ))
+          ffmpeg -y -v error -i "$TEN.mp4" -loop 1 -i ../render/logo/logo-song-vui.png -filter_complex \
+            "[1:v]scale=$lw:-1,format=rgba,colorchannelmixer=aa=0.3,fade=t=in:st=${INTRO:-0}:d=0.8:alpha=1[l];[0:v][l]overlay=x=W-w-$pad:y=$pad:shortest=1,format=yuv420p[v]" \
+            -map "[v]" -map 0:a? -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -c:a copy -movflags +faststart logo.mp4
+          mv logo.mp4 "$TEN.mp4"
+
+      - name: Nén cho vừa dung lượng
+        working-directory: out
+        env:
+          TEN: ${{ matrix.phim.ten_phim }}
+          MAX_MB: ${{ matrix.phim.max_mb }}
+        run: |
+          size=$(stat -c %s "$TEN.mp4")
+          if [ -n "$MAX_MB" ] && [ "$MAX_MB" != "null" ] && [ "$size" -gt $(( MAX_MB * 1024 * 1024 )) ]; then
+            dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$TEN.mp4")
+            kbps=$(python3 -c "print(int($MAX_MB * 8 * 1024 * 0.96 / $dur - 128))")
+            echo "Nén xuống ${MAX_MB}MB (video ${kbps}kbps)"
+            ffmpeg -y -v error -i "$TEN.mp4" -c:v libx264 -preset slow -b:v ${kbps}k -pass 1 -passlogfile pass -an -f mp4 /dev/null
+            ffmpeg -y -v error -i "$TEN.mp4" -c:v libx264 -preset slow -b:v ${kbps}k -pass 2 -passlogfile pass \
+              -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart small.mp4
+            mv small.mp4 "$TEN.mp4"
+          fi
+          cp "../du-an/$TEN/nguon-video.txt" "$TEN-nguon.txt" 2>/dev/null || true
+          ls -la
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phim-${{ matrix.phim.ten_phim }}
+          path: out/${{ matrix.phim.ten_phim }}*
+
+  dang:
+    needs: [chon, render]
+    if: always() && needs.chon.outputs.phim != '[]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: phim-*
+          path: out
+          merge-multiple: true
+
+      - name: Đăng lên Releases và dọn nguyên liệu
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PHIEU: ${{ needs.chon.outputs.phieu }}
+        run: |
+          shopt -s nullglob
+          for p in $(echo "$PHIEU" | jq -r '.[]'); do
+            ten=$(jq -r .ten "$p"); nl=$(jq -r .nguyen_lieu "$p")
+            files=(); for t in $(jq -r '.phim[].ten_phim' "$p"); do files+=(out/"$t".mp4 out/"$t"-nguon.txt); done
+            have=(); for f in "${files[@]}"; do [ -f "$f" ] && have+=("$f"); done
+            if [ ${#have[@]} -eq 0 ]; then echo "::error::Phiếu $ten không render được phim nào."; continue; fi
+            tag="$ten-${{ github.run_number }}"
+            day=$(TZ=Asia/Ho_Chi_Minh date +%d-%m-%Y)
+            gh release create "$tag" "${have[@]}" --repo "${{ github.repository }}" \
+              --title "Thiên nhiên $day (#${{ github.run_number }})" \
+              --notes "Phim thiên nhiên từ $(jq -r .nguon.repo "$p") (commit $(jq -r '.nguon.commit[0:7]' "$p")): $(jq -r '[.phim[].tieu_de] | join(", ")' "$p")."
+            echo "### $ten: https://github.com/${{ github.repository }}/releases/tag/$tag" >> "$GITHUB_STEP_SUMMARY"
+            # Đăng xong thì xoá nhánh nguyên liệu (chỉ khi mọi phim của phiếu đều render được).
+            n_mp4=0; for f in "${have[@]}"; do [[ "$f" == *.mp4 ]] && n_mp4=$((n_mp4 + 1)); done
+            if [ "$n_mp4" -eq "$(jq '.phim | length' "$p")" ]; then
+              git push origin --delete "$nl" || true
+            fi
+          done
