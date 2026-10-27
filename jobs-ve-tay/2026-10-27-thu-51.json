@@ -6,6 +6,7 @@
     "commit": "625ee49a2fb10317ab354fe0f2a14e9871882ed3"
   },
   "du_an": "2026-10-27-thu-51",
-  "chay_thu": true,
-  "phu_de": true
+  "chay_thu": false,
+  "phu_de": true,
+  "gui_luc": "2026-10-27T06:00:00Z"
 }
