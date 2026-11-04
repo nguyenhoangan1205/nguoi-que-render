@@ -1,0 +1,19 @@
+{
+  "ten": "thien-nhien-04-11-0304",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "4ae19e413d0a2f05802382a18de07fbf6740ee60"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-04-11-0304",
+  "phim": [
+    {
+      "ten_phim": "loi-mon-sau-mua-04-11",
+      "preset": "di-bo-rung-reu",
+      "tieu_de": "Lối Mòn Sau Mưa",
+      "max_mb": 40,
+      "intro_end": 5.0,
+      "goi": "loi-mon-sau-mua-04-11.tar.gz"
+    }
+  ]
+}
