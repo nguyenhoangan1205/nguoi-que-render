@@ -95,6 +95,11 @@ Workflow **Render thiên nhiên** nhận phiếu trong `jobs-thien-nhien/<ten>.j
   `<ten-phim>-<ngay>-<thang>.mp4` kèm `<ten-phim>-<ngay>-<thang>-nguon.txt` (tác giả các clip).
 - Đăng xong thì nhánh `nguyen-lieu/<ten>` tự bị xoá.
 
+Caption đăng phim thiên nhiên ở [`caption-thien-nhien.md`](caption-thien-nhien.md) (đọc) và [`dang-bai.json`](dang-bai.json)
+(app đăng bài quét). Mỗi phim có bản dài cho Facebook và bản ngắn cho TikTok / Instagram, giọng tĩnh tâm, sống nhẹ nhàng,
+dừng lại để bước tiếp. Nhãn bản chỉ nằm trong ghi chú ẩn `<!-- ban-dai: facebook -->` / `<!-- ban-ngan: tiktok, instagram -->`
+và trường `note`, `platforms` của JSON, không viết vào caption.
+
 Để `thien-nhien-hung-vy` tự gửi phiếu, đặt secret `RENDER_TOKEN` ở repo đó (token có quyền Contents: Read and write
 trên `nguoi-que-render`).
 
