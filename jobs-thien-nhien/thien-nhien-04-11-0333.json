@@ -1,0 +1,35 @@
+{
+  "ten": "thien-nhien-04-11-0333",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "fe2680e834d62a5c032cf354f542bac4b04685f5"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-04-11-0333",
+  "phim": [
+    {
+      "ten_phim": "buoc-chan-rung-nang-04-11",
+      "preset": "di-bo-rung-nang",
+      "tieu_de": "Bước Chân Rừng Nắng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "buoc-chan-rung-nang-04-11.tar.gz"
+    },
+    {
+      "ten_phim": "di-bo-vao-rung-sau-04-11",
+      "preset": "di-bo-rung-sau",
+      "tieu_de": "Đi Bộ Vào Rừng Sâu",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "di-bo-vao-rung-sau-04-11.tar.gz"
+    },
+    {
+      "ten_phim": "loi-rung-suong-som-04-11",
+      "preset": "di-bo-rung-suong",
+      "tieu_de": "Lối Rừng Sương Sớm",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "loi-rung-suong-som-04-11.tar.gz"
+    }
+  ]
+}
