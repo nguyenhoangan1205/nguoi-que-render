@@ -95,6 +95,9 @@ Workflow **Render thiên nhiên** nhận phiếu trong `jobs-thien-nhien/<ten>.j
   `<ten-phim>-<ngay>-<thang>.mp4` kèm `<ten-phim>-<ngay>-<thang>-nguon.txt` (tác giả các clip).
 - Đăng xong thì nhánh `nguyen-lieu/<ten>` tự bị xoá.
 
+Caption đăng phim thiên nhiên ghi ở [`caption-thien-nhien.md`](caption-thien-nhien.md): mỗi phim một caption ngắn
+(tĩnh tâm, sống nhẹ nhàng, dừng lại để bước tiếp) rồi đến hashtag; không chia "bản ngắn / bản dài".
+
 Để `thien-nhien-hung-vy` tự gửi phiếu, đặt secret `RENDER_TOKEN` ở repo đó (token có quyền Contents: Read and write
 trên `nguoi-que-render`).
 
