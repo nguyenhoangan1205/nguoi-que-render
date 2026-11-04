@@ -118,8 +118,10 @@ jobs:
             dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$TEN.mp4")
             kbps=$(python3 -c "print(int($MAX_MB * 8 * 1024 * 0.96 / $dur - 128))")
             echo "Nén xuống ${MAX_MB}MB (video ${kbps}kbps)"
-            ffmpeg -y -v error -i "$TEN.mp4" -c:v libx264 -preset slow -b:v ${kbps}k -pass 1 -passlogfile pass -an -f mp4 /dev/null
-            ffmpeg -y -v error -i "$TEN.mp4" -c:v libx264 -preset slow -b:v ${kbps}k -pass 2 -passlogfile pass \
+            # Chỉ áp -pass cho luồng hình: ffmpeg mới áp "-pass 2" cho cả luồng tiếng rồi báo lỗi
+            # "Error reading log file pass-1.log" vì lượt 1 (-an) không có log cho luồng tiếng.
+            ffmpeg -y -v error -i "$TEN.mp4" -c:v libx264 -preset slow -b:v ${kbps}k -pass:v 1 -passlogfile:v pass -an -f mp4 /dev/null
+            ffmpeg -y -v error -i "$TEN.mp4" -c:v libx264 -preset slow -b:v ${kbps}k -pass:v 2 -passlogfile:v pass \
               -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart small.mp4
             mv small.mp4 "$TEN.mp4"
           fi
