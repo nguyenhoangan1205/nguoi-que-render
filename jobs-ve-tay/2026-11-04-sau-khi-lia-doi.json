@@ -3,10 +3,10 @@
   "nguon": {
     "repo": "nguyenhoangan1205/lam-phim-ve-tay",
     "nhanh": "main",
-    "commit": "75d3050c72f90ecf662d7054cf9cd10221ca9462"
+    "commit": "cf1c9080429bee5d99336897c2f36f0de7d8b780"
   },
-  "gui_luc": "2026-11-04T03:33:35Z",
+  "gui_luc": "2026-11-04T03:40:00Z",
   "du_an": "2026-11-04-sau-khi-lia-doi",
-  "chay_thu": true,
+  "chay_thu": false,
   "phu_de": true
 }
