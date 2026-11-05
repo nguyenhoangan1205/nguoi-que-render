@@ -1,0 +1,43 @@
+{
+  "ten": "thien-nhien-05-11-8",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "9e11dacc0c60872e93b73b2e690c8dbdd30329ce"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-05-11-8",
+  "phim": [
+    {
+      "ten_phim": "di-bo-trong-rung-mua-05-11",
+      "preset": "di-bo-rung-mua",
+      "tieu_de": "Đi Bộ Trong Rừng Mưa",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "di-bo-trong-rung-mua-05-11.tar.gz"
+    },
+    {
+      "ten_phim": "di-trong-mua-suong-rung-gia-05-11",
+      "preset": "di-bo-rung-mua-suong",
+      "tieu_de": "Đi Trong Mưa Sương Rừng Già",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "di-trong-mua-suong-rung-gia-05-11.tar.gz"
+    },
+    {
+      "ten_phim": "loi-mon-rung-ram-mua-roi-05-11",
+      "preset": "di-bo-rung-ram-mua",
+      "tieu_de": "Lối Mòn Rừng Rậm Mưa Rơi",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "loi-mon-rung-ram-mua-roi-05-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-phong-xanh-duoi-mua-05-11",
+      "preset": "di-bo-rung-nhiet-doi-mua",
+      "tieu_de": "Rừng Phong Xanh Dưới Mưa",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-phong-xanh-duoi-mua-05-11.tar.gz"
+    }
+  ]
+}
