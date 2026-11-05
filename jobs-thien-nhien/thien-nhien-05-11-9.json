@@ -1,0 +1,43 @@
+{
+  "ten": "thien-nhien-05-11-9",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "0a478e07fe3b180a303908517e9936209faded55"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-05-11-9",
+  "phim": [
+    {
+      "ten_phim": "loi-mon-tuyet-roi-05-11",
+      "preset": "di-bo-tuyet-roi",
+      "tieu_de": "Lối Mòn Tuyết Rơi",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "loi-mon-tuyet-roi-05-11.tar.gz"
+    },
+    {
+      "ten_phim": "nang-dong-tren-rung-tuyet-05-11",
+      "preset": "di-bo-rung-tuyet-nang",
+      "tieu_de": "Nắng Đông Trên Rừng Tuyết",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "nang-dong-tren-rung-tuyet-05-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-thong-phu-tuyet-05-11",
+      "preset": "di-bo-rung-thong-tuyet",
+      "tieu_de": "Rừng Thông Phủ Tuyết",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-thong-phu-tuyet-05-11.tar.gz"
+    },
+    {
+      "ten_phim": "tuyet-dau-mua-tren-loi-rung-05-11",
+      "preset": "di-bo-rung-tuyet",
+      "tieu_de": "Tuyết Đầu Mùa Trên Lối Rừng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "tuyet-dau-mua-tren-loi-rung-05-11.tar.gz"
+    }
+  ]
+}
