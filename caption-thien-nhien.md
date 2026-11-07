@@ -128,3 +128,103 @@ Dừng lại đây một nhịp, nghe suối chảy, rồi nhẹ nhàng bước 
 Đi sâu vào rừng mới nghe rõ tiếng suối, đi sâu vào lòng mới nghe rõ chính mình 💧
 
 #TinhTam #SongNheNhang #DungLaiDeBuocTiep #TiengSuoi #SongVui
+
+## Lối Nhỏ Giữa Rừng Nguyên Sinh
+
+Video: https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/thien-nhien-07-11-10-6/loi-nho-giua-rung-nguyen-sinh-07-11.mp4
+
+<!-- ban-dai: facebook -->
+
+Đi sâu vào rừng nguyên sinh, nơi cây già hơn cả trăm năm, lá khô phủ dày dưới chân.
+
+Mỗi bước đi, lá kêu xào xạc. Chim hót trên cành, côn trùng rả rích, chẳng ai giục ai. Ở đây không có thông báo, không có hạn chót, chỉ có hơi thở của mình và nhịp bước của mình.
+
+Cứ đi chậm thôi. Rừng đã đứng đây cả trăm năm, đâu cần mình phải vội 🌿
+
+#TinhTam #SongNheNhang #DungLaiDeBuocTiep #RungNguyenSinh #DiBoTrongRung #ThienNhien #ChuaLanh #SongVui
+
+<!-- ban-ngan: tiktok, instagram -->
+
+Rừng đứng đây cả trăm năm, đâu cần mình phải vội. Đi chậm, nghe lá xào xạc dưới chân 🌿
+
+#TinhTam #SongNheNhang #RungNguyenSinh #ThienNhien #SongVui
+
+## Giữa Những Cây Cổ Thụ
+
+Video: https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/thien-nhien-07-11-10-6/giua-nhung-cay-co-thu-07-11.mp4
+
+<!-- ban-dai: facebook -->
+
+Đứng giữa những thân cây cổ thụ, tự nhiên thấy mình nhỏ lại, và những lo toan cũng nhỏ theo.
+
+Cây lớn lên từng chút, qua bao mùa nắng mưa, chẳng cây nào vội cao cho bằng cây bên cạnh. Mình cũng vậy, mỗi người một nhịp, lớn lên theo cách của mình.
+
+Nghe ve kêu trên ngọn, nghe lá vỡ dưới chân, rồi thở một hơi thật dài. Nhẹ rồi thì bước tiếp 🌳
+
+#TinhTam #SongNheNhang #DungLaiDeBuocTiep #CayCoThu #RungGia #ThienNhien #ChuaLanh #SongVui
+
+<!-- ban-ngan: tiktok, instagram -->
+
+Chẳng cây nào vội cao cho bằng cây bên cạnh. Mỗi người một nhịp, cứ lớn lên theo cách của mình 🌳
+
+#TinhTam #SongNheNhang #CayCoThu #ThienNhien #SongVui
+
+## Rừng Già Dây Leo
+
+Video: https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/thien-nhien-07-11-10-6/rung-gia-day-leo-07-11.mp4
+
+<!-- ban-dai: facebook -->
+
+Lối mòn nhỏ len giữa rừng già, dây leo buông xuống, côn trùng ngân lên đủ thứ âm thanh.
+
+Đường trong rừng chẳng bao giờ thẳng tắp. Có đoạn phải cúi người, có đoạn phải vòng qua. Đời cũng thế, đâu phải lúc nào cũng đi một mạch tới nơi.
+
+Vòng một chút cũng được, chậm một chút cũng được. Miễn là mình vẫn đang bước 🍃
+
+#TinhTam #SongNheNhang #DungLaiDeBuocTiep #RungGia #TiengConTrung #ThienNhien #ChuaLanh #SongVui
+
+<!-- ban-ngan: tiktok, instagram -->
+
+Đường trong rừng chẳng bao giờ thẳng tắp. Vòng một chút, chậm một chút, miễn là mình vẫn đang bước 🍃
+
+#TinhTam #SongNheNhang #RungGia #ThienNhien #SongVui
+
+## Thung Rừng Dương Xỉ
+
+Video: https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/thien-nhien-07-11-10-6/thung-rung-duong-xi-07-11.mp4
+
+<!-- ban-dai: facebook -->
+
+Giữa thung rừng, dương xỉ mọc xanh mướt hai bên lối đi, chim nhỏ gọi nhau trên cành.
+
+Dương xỉ không cần nắng gắt, không cần đất tốt, cứ lặng lẽ xanh dưới tán rừng. Có những người cũng vậy, chẳng ồn ào, chẳng phô trương, mà vẫn bình yên theo cách riêng.
+
+Thả lỏng vai, bước chậm, nghe lá lao xao. Bình yên đôi khi chỉ cần chừng ấy thôi 🌱
+
+#TinhTam #SongNheNhang #DungLaiDeBuocTiep #DuongXi #DiBoTrongRung #ThienNhien #ChuaLanh #SongVui
+
+<!-- ban-ngan: tiktok, instagram -->
+
+Dương xỉ chẳng cần nắng gắt, cứ lặng lẽ xanh dưới tán rừng. Bình yên đôi khi chỉ cần chừng ấy 🌱
+
+#TinhTam #SongNheNhang #DuongXi #ThienNhien #SongVui
+
+## Nắng Chiều Trong Rừng Già
+
+Video: https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/thien-nhien-07-11-10-6/nang-chieu-trong-rung-gia-07-11.mp4
+
+<!-- ban-dai: facebook -->
+
+Nắng chiều xiên qua tán rừng, nhuộm vàng từng chiếc lá khô dưới chân.
+
+Cuối ngày rồi, việc chưa xong thì để mai. Dế bắt đầu kêu, chim gọi nhau về tổ, rừng cũng đang chậm lại. Mình cũng nên cho phép bản thân chậm lại một chút.
+
+Đi thêm vài bước trong nắng, nghe lá khô lạo xạo, rồi về nhà với một lòng nhẹ tênh 🌅
+
+#TinhTam #SongNheNhang #DungLaiDeBuocTiep #NangChieu #RungGia #ThienNhien #ChuaLanh #SongVui
+
+<!-- ban-ngan: tiktok, instagram -->
+
+Cuối ngày rồi, rừng cũng đang chậm lại. Cho phép mình chậm lại một chút nhé 🌅
+
+#TinhTam #SongNheNhang #NangChieu #ThienNhien #SongVui
