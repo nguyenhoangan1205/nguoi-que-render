@@ -1,0 +1,51 @@
+{
+  "ten": "thien-nhien-07-11-10",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "79dddfb43749041003d90c1106db5ea97f1804c9"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-07-11-10",
+  "phim": [
+    {
+      "ten_phim": "giua-nhung-cay-co-thu-07-11",
+      "preset": "di-bo-rung-co-thu",
+      "tieu_de": "Giữa Những Cây Cổ Thụ",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "giua-nhung-cay-co-thu-07-11.tar.gz"
+    },
+    {
+      "ten_phim": "loi-nho-giua-rung-nguyen-sinh-07-11",
+      "preset": "di-bo-rung-nguyen-sinh",
+      "tieu_de": "Lối Nhỏ Giữa Rừng Nguyên Sinh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "loi-nho-giua-rung-nguyen-sinh-07-11.tar.gz"
+    },
+    {
+      "ten_phim": "nang-chieu-trong-rung-gia-07-11",
+      "preset": "di-bo-rung-chieu",
+      "tieu_de": "Nắng Chiều Trong Rừng Già",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "nang-chieu-trong-rung-gia-07-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-gia-day-leo-07-11",
+      "preset": "di-bo-rung-day-leo",
+      "tieu_de": "Rừng Già Dây Leo",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-gia-day-leo-07-11.tar.gz"
+    },
+    {
+      "ten_phim": "thung-rung-duong-xi-07-11",
+      "preset": "di-bo-rung-duong-xi",
+      "tieu_de": "Thung Rừng Dương Xỉ",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "thung-rung-duong-xi-07-11.tar.gz"
+    }
+  ]
+}
