@@ -95,6 +95,8 @@ Workflow **Render thiên nhiên** nhận phiếu trong `jobs-thien-nhien/<ten>.j
   `<ten-phim>-<ngay>-<thang>.mp4` kèm `<ten-phim>-<ngay>-<thang>-nguon.txt` (tác giả các clip).
 - Đăng xong thì nhánh `nguyen-lieu/<ten>` tự bị xoá.
 
+Caption bài ảnh châm ngôn khắc kỷ ở [`caption-khac-ky.md`](caption-khac-ky.md), ảnh ở `hinh-facebook/`.
+
 Caption đăng phim thiên nhiên ở [`caption-thien-nhien.md`](caption-thien-nhien.md) (đọc) và [`dang-bai.json`](dang-bai.json)
 (app đăng bài quét). Mỗi phim có bản dài cho Facebook và bản ngắn cho TikTok / Instagram, giọng tĩnh tâm, sống nhẹ nhàng,
 dừng lại để bước tiếp. Nhãn bản chỉ nằm trong ghi chú ẩn `<!-- ban-dai: facebook -->` / `<!-- ban-ngan: tiktok, instagram -->`
