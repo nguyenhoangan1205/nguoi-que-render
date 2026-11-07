@@ -2,11 +2,12 @@
   "ten": "2026-11-07-nhan-nguyen-binh-khiem",
   "nguon": {
     "repo": "nguyenhoangan1205/lam-phim-bang-hinh-anh",
-    "nhanh": "claude/compassionate-davinci-pq2b31",
-    "commit": "ce65a8a144955d5e43672401a0f4e53ecbe669ed"
+    "nhanh": "main",
+    "commit": "b24cc06f627bcf31c4c6692cea02ca10839d8274"
   },
-  "gui_luc": "2026-11-07T05:48:37Z",
+  "gui_luc": "2026-11-07T05:54:30Z",
   "du_an": "2026-11-07-nhan-nguyen-binh-khiem",
   "chay_thu": false,
-  "phu_de": true
+  "phu_de": true,
+  "lan": 2
 }
