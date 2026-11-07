@@ -96,7 +96,8 @@ Workflow **Render thiên nhiên** nhận phiếu trong `jobs-thien-nhien/<ten>.j
 - Đăng xong thì nhánh `nguyen-lieu/<ten>` tự bị xoá.
 
 Caption đăng phim thiên nhiên ở [`caption-thien-nhien.md`](caption-thien-nhien.md) (đọc) và [`dang-bai.json`](dang-bai.json)
-(app đăng bài quét). Mỗi phim có bản dài cho Facebook và bản ngắn cho TikTok / Instagram, giọng tĩnh tâm, sống nhẹ nhàng,
+(app đăng bài quét, chỉ dành cho phim thiên nhiên; bài ảnh châm ngôn/trend lưu ở `hinh-facebook/` của repo
+lam-phim-bang-hinh-anh, nhánh `main`). Mỗi phim có bản dài cho Facebook và bản ngắn cho TikTok / Instagram, giọng tĩnh tâm, sống nhẹ nhàng,
 dừng lại để bước tiếp. Nhãn bản chỉ nằm trong ghi chú ẩn `<!-- ban-dai: facebook -->` / `<!-- ban-ngan: tiktok, instagram -->`
 và trường `note`, `platforms` của JSON, không viết vào caption.
 
