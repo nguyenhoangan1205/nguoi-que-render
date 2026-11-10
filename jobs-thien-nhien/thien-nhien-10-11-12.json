@@ -1,0 +1,91 @@
+{
+  "ten": "thien-nhien-10-11-12",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "6001cf2bb464dfff7023aae559637f76005d4322"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-10-11-12",
+  "phim": [
+    {
+      "ten_phim": "dong-nuoc-trong-rung-tham-10-11",
+      "preset": "suoi-rung-ram-09",
+      "tieu_de": "Dòng Nước Trong Rừng Thẳm",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "dong-nuoc-trong-rung-tham-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "dong-suoi-reu-xanh-10-11",
+      "preset": "suoi-rung-ram-03",
+      "tieu_de": "Dòng Suối Rêu Xanh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "dong-suoi-reu-xanh-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "khe-nuoc-giua-rung-gia-10-11",
+      "preset": "suoi-rung-ram-02",
+      "tieu_de": "Khe Nước Giữa Rừng Già",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "khe-nuoc-giua-rung-gia-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "khe-suoi-binh-yen-10-11",
+      "preset": "suoi-rung-ram-10",
+      "tieu_de": "Khe Suối Bình Yên",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "khe-suoi-binh-yen-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "suoi-mat-rung-xanh-10-11",
+      "preset": "suoi-rung-ram-08",
+      "tieu_de": "Suối Mát Rừng Xanh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "suoi-mat-rung-xanh-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "suoi-nho-trong-rung-sau-10-11",
+      "preset": "suoi-rung-ram-04",
+      "tieu_de": "Suối Nhỏ Trong Rừng Sâu",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "suoi-nho-trong-rung-sau-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "suoi-reo-duoi-tan-rung-10-11",
+      "preset": "suoi-rung-ram-06",
+      "tieu_de": "Suối Reo Dưới Tán Rừng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "suoi-reo-duoi-tan-rung-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "suoi-rung-ram-10-11",
+      "preset": "suoi-rung-ram-01",
+      "tieu_de": "Suối Rừng Rậm",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "suoi-rung-ram-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "thac-nho-rung-nhiet-doi-10-11",
+      "preset": "suoi-rung-ram-07",
+      "tieu_de": "Thác Nhỏ Rừng Nhiệt Đới",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "thac-nho-rung-nhiet-doi-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "tieng-suoi-dai-ngan-10-11",
+      "preset": "suoi-rung-ram-05",
+      "tieu_de": "Tiếng Suối Đại Ngàn",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "tieng-suoi-dai-ngan-10-11.tar.gz"
+    }
+  ]
+}
