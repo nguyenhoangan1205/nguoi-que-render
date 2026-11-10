@@ -3,10 +3,10 @@
   "nguon": {
     "repo": "nguyenhoangan1205/lam-phim-ve-tay-di-chuyen",
     "nhanh": "claude/festive-fermi-6blj9t",
-    "commit": "17955850d99f48b685762c8f8e297112a151610c"
+    "commit": "2dc705d9d9c6d08f57996bbf1863bfb8d3ddc42f"
   },
-  "gui_luc": "2026-11-10T03:52:57Z",
+  "gui_luc": "2026-11-10T03:56:13Z",
   "du_an": "2026-11-10-thu-55",
-  "chay_thu": true,
+  "chay_thu": false,
   "phu_de": true
 }
