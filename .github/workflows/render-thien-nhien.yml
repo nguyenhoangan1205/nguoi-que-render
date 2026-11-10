@@ -130,6 +130,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
+          retention-days: 1  # tự xoá sau 1 ngày (phim lưu lâu dài ở Releases)
           name: phim-${{ matrix.phim.ten_phim }}
           path: out/${{ matrix.phim.ten_phim }}*
 
