@@ -1,0 +1,67 @@
+{
+  "ten": "thien-nhien-10-11-11",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "5590e14dae942984285fbd45fc34277689de20b9"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-10-11-11",
+  "phim": [
+    {
+      "ten_phim": "binh-minh-rung-nguyen-sinh-10-11",
+      "preset": "rung-nguyen-sinh-01",
+      "tieu_de": "Bình Minh Rừng Nguyên Sinh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "binh-minh-rung-nguyen-sinh-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "dai-thu-ngan-nam-10-11",
+      "preset": "rung-nguyen-sinh-02",
+      "tieu_de": "Đại Thụ Ngàn Năm",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "dai-thu-ngan-nam-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "day-leo-rung-gia-10-11",
+      "preset": "rung-nguyen-sinh-07",
+      "tieu_de": "Dây Leo Rừng Già",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "day-leo-rung-gia-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "loi-reu-phong-10-11",
+      "preset": "rung-nguyen-sinh-03",
+      "tieu_de": "Lối Rêu Phong",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "loi-reu-phong-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "men-theo-suoi-rung-10-11",
+      "preset": "rung-nguyen-sinh-05",
+      "tieu_de": "Men Theo Suối Rừng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "men-theo-suoi-rung-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "nang-xuyen-tan-rung-10-11",
+      "preset": "rung-nguyen-sinh-04",
+      "tieu_de": "Nắng Xuyên Tán Rừng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "nang-xuyen-tan-rung-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "tinh-lang-rung-nguyen-sinh-10-11",
+      "preset": "rung-nguyen-sinh-10",
+      "tieu_de": "Tĩnh Lặng Rừng Nguyên Sinh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "tinh-lang-rung-nguyen-sinh-10-11.tar.gz"
+    }
+  ]
+}
