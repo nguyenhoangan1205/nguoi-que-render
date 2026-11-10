@@ -1,0 +1,91 @@
+{
+  "ten": "thien-nhien-10-11-13",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "5d1a6439a84d6f59a0283a17b4d3e01b569c0483"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-10-11-13",
+  "phim": [
+    {
+      "ten_phim": "buoc-chan-rung-ram-10-11",
+      "preset": "di-bo-rung-ram-01",
+      "tieu_de": "Bước Chân Rừng Rậm",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "buoc-chan-rung-ram-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "dao-buoc-rung-nguyen-sinh-10-11",
+      "preset": "di-bo-rung-ram-05",
+      "tieu_de": "Dạo Bước Rừng Nguyên Sinh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "dao-buoc-rung-nguyen-sinh-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "di-duoi-tan-rung-10-11",
+      "preset": "di-bo-rung-ram-07",
+      "tieu_de": "Đi Dưới Tán Rừng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "di-duoi-tan-rung-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "duong-nho-trong-rung-sau-10-11",
+      "preset": "di-bo-rung-ram-04",
+      "tieu_de": "Đường Nhỏ Trong Rừng Sâu",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "duong-nho-trong-rung-sau-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "loi-mon-dai-ngan-10-11",
+      "preset": "di-bo-rung-ram-02",
+      "tieu_de": "Lối Mòn Đại Ngàn",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "loi-mon-dai-ngan-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "loi-rung-buoi-som-10-11",
+      "preset": "di-bo-rung-ram-08",
+      "tieu_de": "Lối Rừng Buổi Sớm",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "loi-rung-buoi-som-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "mot-minh-giua-rung-10-11",
+      "preset": "di-bo-rung-ram-06",
+      "tieu_de": "Một Mình Giữa Rừng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "mot-minh-giua-rung-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-ram-binh-yen-10-11",
+      "preset": "di-bo-rung-ram-10",
+      "tieu_de": "Rừng Rậm Bình Yên",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-ram-binh-yen-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "theo-loi-mon-xanh-10-11",
+      "preset": "di-bo-rung-ram-09",
+      "tieu_de": "Theo Lối Mòn Xanh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "theo-loi-mon-xanh-10-11.tar.gz"
+    },
+    {
+      "ten_phim": "xuyen-qua-rung-xanh-10-11",
+      "preset": "di-bo-rung-ram-03",
+      "tieu_de": "Xuyên Qua Rừng Xanh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "xuyen-qua-rung-xanh-10-11.tar.gz"
+    }
+  ]
+}
