@@ -1,0 +1,19 @@
+{
+  "ten": "thien-nhien-11-11-16",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "51a66e2cb92c30dbc11d0afc66735548b3caba67"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-11-11-16",
+  "phim": [
+    {
+      "ten_phim": "nghe-suoi-hat-11-11",
+      "preset": "di-bo-ven-suoi-04",
+      "tieu_de": "Nghe Suối Hát",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "nghe-suoi-hat-11-11.tar.gz"
+    }
+  ]
+}
