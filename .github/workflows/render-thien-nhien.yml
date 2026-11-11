@@ -97,12 +97,12 @@ jobs:
           TEN: ${{ matrix.phim.ten_phim }}
           INTRO: ${{ matrix.phim.intro_end }}
         run: |
-          # Cùng quy cách các phim khác: mờ 30%, góc trên phải, rộng 1/5 cạnh ngắn, cách mép 1/25.
+          # Logo hiện 85% + bóng mờ tối phía sau để nổi trên nền sáng (nước, trời); góc trên phải, rộng 1/5 cạnh ngắn, cách mép 1/25.
           # Riêng phim thiên nhiên: logo hiện dần sau khi tiêu đề mở đầu mờ đi (giây $INTRO) để không đè chữ.
           IFS=, read W H < <(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 "$TEN.mp4")
-          m=$(( W < H ? W : H )); lw=$(( m / 5 / 2 * 2 )); pad=$(( m / 25 ))
+          m=$(( W < H ? W : H )); lw=$(( m / 5 / 2 * 2 )); pad=$(( m / 25 )); off=$(( m / 360 + 1 )); sh=$(( m / 300 + 1 ))
           ffmpeg -y -v error -i "$TEN.mp4" -loop 1 -i ../render/logo/logo-song-vui.png -filter_complex \
-            "[1:v]scale=$lw:-1,format=rgba,colorchannelmixer=aa=0.3,fade=t=in:st=${INTRO:-0}:d=0.8:alpha=1[l];[0:v][l]overlay=x=W-w-$pad:y=$pad:shortest=1,format=yuv420p[v]" \
+            "[1:v]scale=$lw:-1,format=rgba,fade=t=in:st=${INTRO:-0}:d=0.8:alpha=1,split[a][b];[a]colorchannelmixer=rr=0:gg=0:bb=0:aa=0.55,gblur=sigma=$sh[s];[b]colorchannelmixer=aa=0.85[l];[0:v][s]overlay=x=W-w-$pad+$off:y=$pad+$off:shortest=1[t];[t][l]overlay=x=W-w-$pad:y=$pad:shortest=1,format=yuv420p[v]" \
             -map "[v]" -map 0:a? -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -c:a copy -movflags +faststart logo.mp4
           mv logo.mp4 "$TEN.mp4"
 
