@@ -1,0 +1,19 @@
+{
+  "ten": "thien-nhien-11-11-15",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "c5e75f358f04f7956ac7ffcabfeacbb7851d2e1b"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-11-11-15",
+  "phim": [
+    {
+      "ten_phim": "buoc-chan-ben-suoi-11-11",
+      "preset": "di-bo-ven-suoi-02",
+      "tieu_de": "Bước Chân Bên Suối",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "buoc-chan-ben-suoi-11-11.tar.gz"
+    }
+  ]
+}
