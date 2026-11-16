@@ -1,0 +1,19 @@
+{
+  "ten": "thien-nhien-16-11-17",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "f84665c7e9a61a9f7e66f3a3e6626a283e1bcea2"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-16-11-17",
+  "phim": [
+    {
+      "ten_phim": "thong-tha-giua-rung-xanh-16-11",
+      "preset": "di-bo-rung-ram-nhac-01",
+      "tieu_de": "Thong Thả Giữa Rừng Xanh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "thong-tha-giua-rung-xanh-16-11.tar.gz"
+    }
+  ]
+}
