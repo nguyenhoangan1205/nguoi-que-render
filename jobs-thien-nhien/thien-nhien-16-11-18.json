@@ -1,0 +1,91 @@
+{
+  "ten": "thien-nhien-16-11-18",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "9b552feeaf77f16a8835d62b9050fcb02d65404f"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-16-11-18",
+  "phim": [
+    {
+      "ten_phim": "buoc-cham-duoi-tan-cay-16-11",
+      "preset": "di-bo-rung-ram-nhac-03",
+      "tieu_de": "Bước Chậm Dưới Tán Cây",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "buoc-cham-duoi-tan-cay-16-11.tar.gz"
+    },
+    {
+      "ten_phim": "di-giua-mau-xanh-16-11",
+      "preset": "di-bo-rung-ram-nhac-05",
+      "tieu_de": "Đi Giữa Màu Xanh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "di-giua-mau-xanh-16-11.tar.gz"
+    },
+    {
+      "ten_phim": "duong-rung-thenh-thang-16-11",
+      "preset": "di-bo-rung-ram-nhac-08",
+      "tieu_de": "Đường Rừng Thênh Thang",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "duong-rung-thenh-thang-16-11.tar.gz"
+    },
+    {
+      "ten_phim": "loi-mon-yen-binh-16-11",
+      "preset": "di-bo-rung-ram-nhac-06",
+      "tieu_de": "Lối Mòn Yên Bình",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "loi-mon-yen-binh-16-11.tar.gz"
+    },
+    {
+      "ten_phim": "loi-nho-dai-ngan-16-11",
+      "preset": "di-bo-rung-ram-nhac-02",
+      "tieu_de": "Lối Nhỏ Đại Ngàn",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "loi-nho-dai-ngan-16-11.tar.gz"
+    },
+    {
+      "ten_phim": "mot-som-trong-rung-16-11",
+      "preset": "di-bo-rung-ram-nhac-07",
+      "tieu_de": "Một Sớm Trong Rừng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "mot-som-trong-rung-16-11.tar.gz"
+    },
+    {
+      "ten_phim": "nhe-buoc-rung-gia-16-11",
+      "preset": "di-bo-rung-ram-nhac-09",
+      "tieu_de": "Nhẹ Bước Rừng Già",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "nhe-buoc-rung-gia-16-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-sau-tinh-lang-16-11",
+      "preset": "di-bo-rung-ram-nhac-04",
+      "tieu_de": "Rừng Sâu Tĩnh Lặng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-sau-tinh-lang-16-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-xanh-chua-lanh-16-11",
+      "preset": "di-bo-rung-ram-nhac-10",
+      "tieu_de": "Rừng Xanh Chữa Lành",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-xanh-chua-lanh-16-11.tar.gz"
+    },
+    {
+      "ten_phim": "thong-tha-giua-rung-xanh-16-11",
+      "preset": "di-bo-rung-ram-nhac-01",
+      "tieu_de": "Thong Thả Giữa Rừng Xanh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "thong-tha-giua-rung-xanh-16-11.tar.gz"
+    }
+  ]
+}
