@@ -3,10 +3,10 @@
   "nguon": {
     "repo": "nguyenhoangan1205/lam-phim-ve-tay-di-chuyen",
     "nhanh": "claude/cool-mccarthy-vd61vg",
-    "commit": "409f326934a01c954987fdcdff540d6979cdba22"
+    "commit": "f133c46ce3211341309b02d5075077ff84241cec"
   },
-  "gui_luc": "2026-11-16T10:24:16Z",
+  "gui_luc": "2026-11-16T10:26:51Z",
   "du_an": "2026-11-16-thu-56",
-  "chay_thu": true,
+  "chay_thu": false,
   "phu_de": true
 }
