@@ -1,0 +1,91 @@
+{
+  "ten": "thien-nhien-18-11-19",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "5d836e205c6b91e1d666b18fe80a71cae15af4ef"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-18-11-19",
+  "phim": [
+    {
+      "ten_phim": "buoc-chan-rung-nguyen-sinh-18-11",
+      "preset": "di-bo-rung-ram-rap-05",
+      "tieu_de": "Bước Chân Rừng Nguyên Sinh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "buoc-chan-rung-nguyen-sinh-18-11.tar.gz"
+    },
+    {
+      "ten_phim": "di-sau-vao-rung-xanh-18-11",
+      "preset": "di-bo-rung-ram-rap-08",
+      "tieu_de": "Đi Sâu Vào Rừng Xanh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "di-sau-vao-rung-xanh-18-11.tar.gz"
+    },
+    {
+      "ten_phim": "duoi-vom-la-xanh-18-11",
+      "preset": "di-bo-rung-ram-rap-04",
+      "tieu_de": "Dưới Vòm Lá Xanh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "duoi-vom-la-xanh-18-11.tar.gz"
+    },
+    {
+      "ten_phim": "giua-bat-ngan-la-18-11",
+      "preset": "di-bo-rung-ram-rap-09",
+      "tieu_de": "Giữa Bạt Ngàn Lá",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "giua-bat-ngan-la-18-11.tar.gz"
+    },
+    {
+      "ten_phim": "lac-buoc-rung-ram-18-11",
+      "preset": "di-bo-rung-ram-rap-01",
+      "tieu_de": "Lạc Bước Rừng Rậm",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "lac-buoc-rung-ram-18-11.tar.gz"
+    },
+    {
+      "ten_phim": "loi-nho-giua-ngan-cay-18-11",
+      "preset": "di-bo-rung-ram-rap-06",
+      "tieu_de": "Lối Nhỏ Giữa Ngàn Cây",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "loi-nho-giua-ngan-cay-18-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-gia-tham-tham-18-11",
+      "preset": "di-bo-rung-ram-rap-03",
+      "tieu_de": "Rừng Già Thăm Thẳm",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-gia-tham-tham-18-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-ram-thi-tham-18-11",
+      "preset": "di-bo-rung-ram-rap-07",
+      "tieu_de": "Rừng Rậm Thì Thầm",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-ram-thi-tham-18-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-xanh-tinh-tai-18-11",
+      "preset": "di-bo-rung-ram-rap-10",
+      "tieu_de": "Rừng Xanh Tĩnh Tại",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-xanh-tinh-tai-18-11.tar.gz"
+    },
+    {
+      "ten_phim": "xuyen-qua-dai-ngan-18-11",
+      "preset": "di-bo-rung-ram-rap-02",
+      "tieu_de": "Xuyên Qua Đại Ngàn",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "xuyen-qua-dai-ngan-18-11.tar.gz"
+    }
+  ]
+}
