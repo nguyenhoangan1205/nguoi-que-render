@@ -3,10 +3,11 @@
   "nguon": {
     "repo": "nguyenhoangan1205/lam-phim-ve-tay-di-chuyen",
     "nhanh": "claude/thu-57",
-    "commit": "f81cde7b0737ba438d3ca9be7c52dc7c2bcf7737"
+    "commit": "d66212a687b783ebabcb9a8ede3993ff58dbe793"
   },
-  "gui_luc": "2026-11-18T04:36:56Z",
+  "gui_luc": "2026-11-18T05:49:30Z",
   "du_an": "2026-11-18-thu-57",
   "chay_thu": false,
-  "phu_de": true
+  "phu_de": true,
+  "lan": 2
 }
