@@ -1,0 +1,45 @@
+# Tạo nhạc nền không lời bằng MusicGen-small (Meta) cho phim, chạy CPU.
+# Cách dùng: commit phiếu jobs-nhac/<ten>.json rồi push; file nhạc được commit lại vào nhac/<ten>.mp3.
+name: Tạo nhạc MusicGen
+
+on:
+  push:
+    paths:
+      - "jobs-nhac/*.json"
+
+permissions:
+  contents: write
+
+jobs:
+  nhac:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Cài MusicGen (CPU)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q transformers scipy numpy
+      - name: Nhớ mô hình MusicGen giữa các lần chạy
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-musicgen-small
+      - name: Tạo nhạc cho các phiếu mới
+        run: |
+          for f in $(git diff --name-only HEAD~1 HEAD -- 'jobs-nhac/*.json'); do
+            [ -f "$f" ] && python tools/tao_nhac_musicgen.py "$f"
+          done
+      - name: Lưu nhạc
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
+          git add nhac
+          git commit -qm "Nhạc MusicGen: $(ls nhac | tr '\n' ' ')" || exit 0
+          git pull -q --rebase && git push -q
