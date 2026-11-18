@@ -1,0 +1,19 @@
+{
+  "ten": "thien-nhien-18-11-20",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "be49a80a6dacab626aa4e9f39d15436750c59137"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-18-11-20",
+  "phim": [
+    {
+      "ten_phim": "lac-buoc-rung-ram-18-11",
+      "preset": "di-bo-rung-ram-rap-01",
+      "tieu_de": "Lạc Bước Rừng Rậm",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "lac-buoc-rung-ram-18-11.tar.gz"
+    }
+  ]
+}
