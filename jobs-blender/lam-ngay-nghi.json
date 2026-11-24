@@ -1,0 +1,14 @@
+{
+  "ten": "lam-ngay-nghi",
+  "tieu_de": "Lầm ngày nghỉ (phim 3D đất sét)",
+  "nguyen_lieu": "nguyen-lieu/lam-ngay-nghi",
+  "file": "phim_dat_set.blend",
+  "canh": [
+    { "scene": "NhanVatChinh", "start": 1, "end": 120 },
+    { "scene": "Canh2_Cong", "start": 1, "end": 572 }
+  ],
+  "may": 20,
+  "phan_tram": 100,
+  "samples": 32,
+  "tron_am_thanh": "tron_am_thanh.py"
+}

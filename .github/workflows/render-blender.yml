@@ -1,0 +1,154 @@
+# Nhận phiếu render phim Blender 3D trong jobs-blender/*.json, render Cycles bằng CPU, chia khung ra nhiều máy chạy
+# song song, nối các cảnh, trộn nhạc + hiệu ứng âm thanh, đóng logo Sống Vui rồi đăng lên Releases.
+# Phiếu: { "ten", "tieu_de", "nguyen_lieu": "<nhánh chứa file .blend + âm thanh>", "file": "<file .blend>",
+#          "canh": [ { "scene", "start", "end" } ], "may": 20, "phan_tram": 100, "samples": 32,
+#          "tron_am_thanh": "<script trộn tiếng trong nhánh nguyên liệu, có thể bỏ trống>" }
+
+name: Render Blender
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "jobs-blender/*.json"
+  workflow_dispatch:
+    inputs:
+      phieu:
+        description: "Phiếu cần render lại (vd. jobs-blender/lam-ngay-nghi.json)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  chon:
+    runs-on: ubuntu-latest
+    outputs:
+      doan: ${{ steps.chon.outputs.doan }}
+      phieu: ${{ steps.chon.outputs.phieu }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: chon
+        env:
+          NHAP: ${{ inputs.phieu }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            f="$NHAP"
+          else
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then BEFORE=HEAD~1; fi
+            git fetch --depth=1 origin "$BEFORE" 2>/dev/null || true
+            f=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'jobs-blender/*.json' | head -1)
+          fi
+          echo "phieu=$f" >> "$GITHUB_OUTPUT"
+          if [ -z "$f" ]; then echo "doan=[]" >> "$GITHUB_OUTPUT"; exit 0; fi
+          # Chia tổng số khung của mọi cảnh thành "may" đoạn gần bằng nhau (một đoạn không vắt qua hai cảnh).
+          doan=$(python3 - "$f" <<'PY'
+          import json, sys, math
+          p = json.load(open(sys.argv[1])); n = int(p.get("may", 20))
+          total = sum(c["end"] - c["start"] + 1 for c in p["canh"]); size = max(1, math.ceil(total / n))
+          out = []
+          for c in p["canh"]:
+              s = c["start"]
+              while s <= c["end"]:
+                  e = min(c["end"], s + size - 1); out.append({"scene": c["scene"], "s": s, "e": e, "id": f'{c["scene"]}-{s:04d}'}); s = e + 1
+          print(json.dumps(out))
+          PY
+          )
+          echo "doan=$doan" >> "$GITHUB_OUTPUT"
+          echo "Số đoạn: $(echo "$doan" | jq length)"
+
+  render:
+    needs: chon
+    if: needs.chon.outputs.doan != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        doan: ${{ fromJson(needs.chon.outputs.doan) }}
+    name: render ${{ matrix.doan.id }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools
+            jobs-blender
+      - name: Lấy nguyên liệu
+        run: |
+          nl=$(jq -r .nguyen_lieu "${{ needs.chon.outputs.phieu }}")
+          git clone --depth 1 --branch "$nl" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" nl
+      - name: Cài Blender
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: blender
+          key: blender-5.3.0-linux-x64
+      - if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          curl -sL https://download.blender.org/release/Blender5.3/blender-5.3.0-linux-x64.tar.xz | tar -xJ
+          mv blender-5.3.0-linux-x64 blender
+      - name: Render Cycles CPU
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y libxi6 libxkbcommon0 libsm6 libgl1 libegl1 > /dev/null
+          p="${{ needs.chon.outputs.phieu }}"
+          ./blender/blender -b "nl/$(jq -r .file "$p")" --python tools/render_blender_doan.py -- \
+            "${{ matrix.doan.scene }}" "${{ matrix.doan.s }}" "${{ matrix.doan.e }}" \
+            "$(jq -r '.phan_tram // 100' "$p")" "$(jq -r '.samples // 32' "$p")" "$PWD/khung" 2>&1 | grep -E "Fra:|XONG|Error|Traceback" | tail -n 40
+          ls khung/*/ | head; test -n "$(ls khung/*/*.png 2>/dev/null)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: khung-${{ matrix.doan.id }}
+          path: khung
+          retention-days: 3
+
+  ghep:
+    needs: [chon, render]
+    if: needs.chon.outputs.doan != '[]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: khung-*
+          path: khung
+          merge-multiple: true
+      - name: Nối cảnh, trộn tiếng, đóng logo
+        env:
+          P: ${{ needs.chon.outputs.phieu }}
+        run: |
+          set -e
+          sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg > /dev/null
+          ten=$(jq -r .ten "$P"); nl=$(jq -r .nguyen_lieu "$P")
+          git clone --depth 1 --branch "$nl" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" nl
+          mkdir -p out; : > out/ds.txt
+          for row in $(jq -c '.canh[]' "$P"); do
+            sc=$(echo "$row" | jq -r .scene); st=$(echo "$row" | jq -r .start)
+            ffmpeg -y -v error -framerate 24 -start_number "$st" -i "khung/$sc/%04d.png" -c:v libx264 -crf 18 -pix_fmt yuv420p "out/$sc.mp4"
+            echo "file '$sc.mp4'" >> out/ds.txt
+          done
+          ffmpeg -y -v error -f concat -safe 0 -i out/ds.txt -c copy out/noi.mp4
+          tron=$(jq -r '.tron_am_thanh // empty' "$P")
+          if [ -n "$tron" ]; then python3 "nl/$tron" out/noi.mp4 out/tieng.mp4; else cp out/noi.mp4 out/tieng.mp4; fi
+          IFS=, read W H < <(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 out/tieng.mp4)
+          m=$(( W < H ? W : H )); lw=$(( m / 5 / 2 * 2 )); pad=$(( m / 25 ))
+          day=$(TZ=Asia/Ho_Chi_Minh date +%d-%m)
+          ffmpeg -y -v error -i out/tieng.mp4 -loop 1 -i logo/logo-song-vui.png -filter_complex \
+            "[1:v]scale=$lw:-1,format=rgba,colorchannelmixer=aa=0.30[l];[0:v][l]overlay=x=W-w-$pad:y=$pad:shortest=1,format=yuv420p[v]" \
+            -map "[v]" -map 0:a? -c:v libx264 -crf 18 -preset medium -c:a copy -movflags +faststart "out/$ten-$day.mp4"
+          ls -la out
+      - name: Đăng lên Releases và dọn nguyên liệu
+        env:
+          GH_TOKEN: ${{ github.token }}
+          P: ${{ needs.chon.outputs.phieu }}
+        run: |
+          ten=$(jq -r .ten "$P"); nl=$(jq -r .nguyen_lieu "$P")
+          tag="$ten-${{ github.run_number }}"
+          gh release create "$tag" out/"$ten"-*.mp4 nl/NGUON-AM-THANH.md --repo "${{ github.repository }}" \
+            --title "$(jq -r '.tieu_de // .ten' "$P") (#${{ github.run_number }})" \
+            --notes "Phim Blender 3D đất sét, render Cycles CPU. Nguồn nhạc và hiệu ứng âm thanh: xem NGUON-AM-THANH.md."
+          echo "### $ten: https://github.com/${{ github.repository }}/releases/tag/$tag" >> "$GITHUB_STEP_SUMMARY"
+          git push origin --delete "$nl" || true
