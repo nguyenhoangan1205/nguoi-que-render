@@ -1,0 +1,13 @@
+{
+  "ten": "nham-ngay-nghi-que",
+  "tieu_de": "Nhầm ngày nghỉ (phim người que)",
+  "nguyen_lieu": "nguyen-lieu/nham-ngay-nghi-que",
+  "file": "nham_ngay_nghi_que.blend",
+  "canh": [
+    { "scene": "Scene", "start": 1, "end": 936 }
+  ],
+  "may": 20,
+  "phan_tram": 100,
+  "samples": 32,
+  "tron_am_thanh": ""
+}
