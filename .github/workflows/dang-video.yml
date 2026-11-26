@@ -43,6 +43,8 @@ jobs:
             ten=$(jq -r .ten "$P"); nl=$(jq -r .nguyen_lieu "$P"); f=$(jq -r .file "$P")
             [ -d "nl-$nl" ] || git clone -q --depth 1 --branch "$nl" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "nl-$nl"
             tag="$ten-${{ github.run_number }}"
+            cu=$(jq -r '.thay_release // empty' "$P")
+            if [ -n "$cu" ]; then gh release delete "$cu" --repo "${{ github.repository }}" --yes --cleanup-tag || true; fi
             gh release create "$tag" "nl-$nl/$f" --repo "${{ github.repository }}" \
               --title "$(jq -r '.tieu_de // .ten' "$P")" --notes "$(jq -r '.ghi_chu // ""' "$P")"
             echo "### $ten: https://github.com/${{ github.repository }}/releases/tag/$tag" >> "$GITHUB_STEP_SUMMARY"

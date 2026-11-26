@@ -116,6 +116,8 @@ lên một nhánh `nguyen-lieu/<ten>`, rồi thêm phiếu `jobs-video/<ten>.jso
 
 Workflow **Đăng video có sẵn** tạo bản Releases `<ten>-<số>` cho mỗi phiếu mới, rồi xoá nhánh nguyên liệu.
 
+Muốn thay một video đã đăng (bản sửa), thêm `"thay_release": "<tag cũ>"` vào phiếu: workflow xoá Release cũ (kèm tag) rồi mới đăng bản mới, để app không hiện hai bản trùng tên.
+
 ## Cài đặt (một lần)
 
 Cần một token tên `RENDER_TOKEN` đặt ở **cả ba repo** (Settings → Secrets and variables → Actions → New repository secret). Tạo token tại GitHub → Settings → Developer settings → Fine-grained tokens, chọn các repo `nguoi-que-video`, `lam-phim-ve-tay` và `nguoi-que-render`, quyền **Contents: Read and write**.
