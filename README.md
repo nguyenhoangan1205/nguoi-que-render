@@ -104,6 +104,18 @@ và trường `note`, `platforms` của JSON, không viết vào caption.
 Để `thien-nhien-hung-vy` tự gửi phiếu, đặt secret `RENDER_TOKEN` ở repo đó (token có quyền Contents: Read and write
 trên `nguoi-que-render`).
 
+## Video dựng sẵn (jobs-video)
+
+Video đã dựng xong ở nơi khác (cloud session, máy An) mà chỉ cần đăng lên Releases cho app quét: đẩy file mp4 (đã đóng logo)
+lên một nhánh `nguyen-lieu/<ten>`, rồi thêm phiếu `jobs-video/<ten>.json` vào `main`:
+
+```json
+{ "ten": "ngay-van-hoa", "tieu_de": "Ngày Văn hóa", "nguyen_lieu": "nguyen-lieu/video-nguoi-que",
+  "file": "ngay-van-hoa-26-11.mp4", "ghi_chu": "..." }
+```
+
+Workflow **Đăng video có sẵn** tạo bản Releases `<ten>-<số>` cho mỗi phiếu mới, rồi xoá nhánh nguyên liệu.
+
 ## Cài đặt (một lần)
 
 Cần một token tên `RENDER_TOKEN` đặt ở **cả ba repo** (Settings → Secrets and variables → Actions → New repository secret). Tạo token tại GitHub → Settings → Developer settings → Fine-grained tokens, chọn các repo `nguoi-que-video`, `lam-phim-ve-tay` và `nguoi-que-render`, quyền **Contents: Read and write**.

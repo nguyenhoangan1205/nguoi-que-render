@@ -1,0 +1,51 @@
+# Đăng video đã dựng sẵn (ở cloud session hay trên máy) lên Releases để app đăng bài quét.
+# Phiếu jobs-video/<ten>.json:
+#   { "ten", "tieu_de", "nguyen_lieu": "<nhánh chứa file mp4>", "file": "<file mp4 trong nhánh>", "ghi_chu": "..." }
+# Mỗi phiếu thành một bản Releases "<ten>-<số lần chạy>". Đăng xong, nhánh nguyên liệu không còn phiếu nào dùng thì bị xoá.
+
+name: Đăng video có sẵn
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "jobs-video/*.json"
+  workflow_dispatch:
+    inputs:
+      phieu:
+        description: "Phiếu cần đăng lại (vd. jobs-video/ngay-van-hoa.json)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  dang:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Đăng lên Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NHAP: ${{ inputs.phieu }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          set -e
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then ds="$NHAP"; else
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then BEFORE=HEAD~1; fi
+            git fetch --depth=1 origin "$BEFORE" 2>/dev/null || true
+            ds=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'jobs-video/*.json')
+          fi
+          nhanh=""
+          for P in $ds; do
+            ten=$(jq -r .ten "$P"); nl=$(jq -r .nguyen_lieu "$P"); f=$(jq -r .file "$P")
+            [ -d "nl-$nl" ] || git clone -q --depth 1 --branch "$nl" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "nl-$nl"
+            tag="$ten-${{ github.run_number }}"
+            gh release create "$tag" "nl-$nl/$f" --repo "${{ github.repository }}" \
+              --title "$(jq -r '.tieu_de // .ten' "$P")" --notes "$(jq -r '.ghi_chu // ""' "$P")"
+            echo "### $ten: https://github.com/${{ github.repository }}/releases/tag/$tag" >> "$GITHUB_STEP_SUMMARY"
+            nhanh="$nhanh $nl"
+          done
+          for nl in $(echo $nhanh | tr ' ' '\n' | sort -u); do git push origin --delete "$nl" || true; done
