@@ -1,5 +1,435 @@
 [
   {
+    "title": "Săn sale Black Friday",
+    "caption": "Nửa đêm săn sale Black Friday 🛒\n\nGiỏ hàng 12 triệu, ví còn đúng 50 nghìn... bấm thanh toán thì đồng hồ về 00:00 😭\nCả nhà lao vào giành cái điện thoại.\n\nBlack Friday này bạn chốt đơn gì chưa? 👇",
+    "hashtags": "#blackfriday #sansale #chotdon #muasamonline #nguoique #hoathinh #haihuoc #reels #xuhuong #fyp",
+    "mediaType": "video",
+    "media": [
+      "https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/san-sale-black-friday-4/san-sale-black-friday-26-11.mp4"
+    ],
+    "note": "Phim người que 9:16, 29 giây. Caption gốc: huong-dan-lam-phim/posts/nguoi-que-san-sale-black-friday.json",
+    "source": "nguyenhoangan1205/nguoi-que-render:releases/san-sale-black-friday-4",
+    "platforms": {
+      "fb_page": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "fb_group": {
+        "on": false,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "instagram": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "tiktok": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "youtube": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      }
+    }
+  },
+  {
+    "title": "Mưa ngập Sài Gòn",
+    "caption": "Sài Gòn 17 giờ 30: trời sập, đường biến thành sông 🌧️🛵\n\nXe chết máy giữa biển nước, đẩy bộ lội tới đầu gối... còn người ta thì chèo thuyền thúng lướt qua 😂\n\nHôm nay bạn về nhà có ướt không? 👇",
+    "hashtags": "#muasaigon #ngapnuoc #saigon #xemay #giotantam #nguoique #hoathinh #haihuoc #reels #xuhuong #fyp",
+    "mediaType": "video",
+    "media": [
+      "https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/mua-ngap-sai-gon-4/mua-ngap-sai-gon-26-11.mp4"
+    ],
+    "note": "Phim người que 9:16, 29 giây. Caption gốc: huong-dan-lam-phim/posts/nguoi-que-mua-ngap-sai-gon.json",
+    "source": "nguyenhoangan1205/nguoi-que-render:releases/mua-ngap-sai-gon-4",
+    "platforms": {
+      "fb_page": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "fb_group": {
+        "on": false,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "instagram": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "tiktok": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "youtube": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      }
+    }
+  },
+  {
+    "title": "Sếp nhắn lúc 23h",
+    "caption": "23 giờ, điện thoại rung: “Em ơi gửi anh file gấp nhé!” 📱\n\nBật dậy cày như chiến binh tới 3 giờ sáng... sáng ra sếp thả đúng một trái tim ❤️\n\nTag ngay đồng nghiệp hay bị sếp nhắn đêm 👇",
+    "hashtags": "#congso #dilam #sep #tangca #vanphong #nguoique #hoathinh #haihuoc #reels #xuhuong #fyp",
+    "mediaType": "video",
+    "media": [
+      "https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/sep-nhan-luc-23h-4/sep-nhan-luc-23h-26-11.mp4"
+    ],
+    "note": "Phim người que 9:16, 29 giây. Caption gốc: huong-dan-lam-phim/posts/nguoi-que-sep-nhan-luc-23h.json",
+    "source": "nguyenhoangan1205/nguoi-que-render:releases/sep-nhan-luc-23h-4",
+    "platforms": {
+      "fb_page": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "fb_group": {
+        "on": false,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "instagram": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "tiktok": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "youtube": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      }
+    }
+  },
+  {
+    "title": "AI thay việc văn phòng",
+    "caption": "Năm 2026, AI bước vào văn phòng 🤖\n\nLàm 10 việc một lúc, người bị đá ra cửa... rồi AI 2.0 tới, đá luôn AI cũ 😅\nCuối cùng cả hai ra vỉa hè chia nhau ổ bánh mì 🥖\n\nAI có thay được việc của bạn không? 👇",
+    "hashtags": "#AI #thoidaiAI #congviec #vanphong #dilam #nguoique #hoathinh #haihuoc #reels #xuhuong #fyp",
+    "mediaType": "video",
+    "media": [
+      "https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/ai-thay-viec-van-phong-4/ai-thay-viec-van-phong-26-11.mp4"
+    ],
+    "note": "Phim người que 9:16, 29 giây. Caption gốc: huong-dan-lam-phim/posts/nguoi-que-ai-thay-viec-van-phong.json",
+    "source": "nguyenhoangan1205/nguoi-que-render:releases/ai-thay-viec-van-phong-4",
+    "platforms": {
+      "fb_page": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "fb_group": {
+        "on": false,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "instagram": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "tiktok": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "youtube": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      }
+    }
+  },
+  {
+    "title": "Thưởng Tết",
+    "caption": "Cuối năm, sếp phát phong bì thưởng Tết 🧧\n\nCả phòng mắt sáng rực, tim đập thình thịch... mở ra: một cuốn lịch và một gói bánh 😶\n\nThưởng Tết năm nay của bạn là gì? 👇",
+    "hashtags": "#thuongtet #tet #cuoinam #congso #dilam #nguoique #hoathinh #haihuoc #reels #xuhuong #fyp",
+    "mediaType": "video",
+    "media": [
+      "https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/thuong-tet-4/thuong-tet-26-11.mp4"
+    ],
+    "note": "Phim người que 9:16, 29 giây. Caption gốc: huong-dan-lam-phim/posts/nguoi-que-thuong-tet.json",
+    "source": "nguyenhoangan1205/nguoi-que-render:releases/thuong-tet-4",
+    "platforms": {
+      "fb_page": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "fb_group": {
+        "on": false,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "instagram": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "tiktok": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "youtube": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      }
+    }
+  },
+  {
+    "title": "Giá vàng lên xuống",
+    "caption": "Dồn hết tiền mua vàng ngay đỉnh 📈\n\nGiá rớt thì ngất, vừa bán xong thì giá vọt lên 📉📈\nĐầu tư vàng mà như ngồi tàu lượn 🎢\n\nBạn mua vàng chưa? 👇",
+    "hashtags": "#giavang #vang #dautu #taichinh #giavanghomnay #nguoique #hoathinh #haihuoc #reels #xuhuong #fyp",
+    "mediaType": "video",
+    "media": [
+      "https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/gia-vang-len-xuong-4/gia-vang-len-xuong-26-11.mp4"
+    ],
+    "note": "Phim người que 9:16, 29 giây. Caption gốc: huong-dan-lam-phim/posts/nguoi-que-gia-vang-len-xuong.json",
+    "source": "nguyenhoangan1205/nguoi-que-render:releases/gia-vang-len-xuong-4",
+    "platforms": {
+      "fb_page": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "fb_group": {
+        "on": false,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "instagram": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "tiktok": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "youtube": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      }
+    }
+  },
+  {
+    "title": "Mẹ gọi về ăn cơm",
+    "caption": "Mẹ gọi lần 1: “5 phút nữa mẹ!” 🎮\n\nLần 2, lần 3... mâm cơm nguội ngắt 🍚\nLần 4: chổi lông gà xuất hiện. Game over 😂\n\nMẹ bạn thường gọi mấy lần? 👇",
+    "hashtags": "#mevacon #goivean #choigame #giadinh #tuoitho #nguoique #hoathinh #haihuoc #reels #xuhuong #fyp",
+    "mediaType": "video",
+    "media": [
+      "https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/me-goi-ve-an-com-4/me-goi-ve-an-com-26-11.mp4"
+    ],
+    "note": "Phim người que 9:16, 29 giây. Caption gốc: huong-dan-lam-phim/posts/nguoi-que-me-goi-ve-an-com.json",
+    "source": "nguyenhoangan1205/nguoi-que-render:releases/me-goi-ve-an-com-4",
+    "platforms": {
+      "fb_page": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "fb_group": {
+        "on": false,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "instagram": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "tiktok": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "youtube": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      }
+    }
+  },
+  {
+    "title": "Họp phụ huynh",
+    "caption": "Bố đi họp phụ huynh về, mặt không cảm xúc 😶\n\nCon run cầm cập... mở sổ liên lạc ra: HẠNG 1 🏆\nVậy là cả xóm được nghe bố khoe bằng loa 📢\n\nBố mẹ bạn có hay khoe con không? 👇",
+    "hashtags": "#hopphuhuynh #hocsinhgioi #bome #daycon #giadinh #nguoique #hoathinh #haihuoc #reels #xuhuong #fyp",
+    "mediaType": "video",
+    "media": [
+      "https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/hop-phu-huynh-4/hop-phu-huynh-26-11.mp4"
+    ],
+    "note": "Phim người que 9:16, 29 giây. Caption gốc: huong-dan-lam-phim/posts/nguoi-que-hop-phu-huynh.json",
+    "source": "nguyenhoangan1205/nguoi-que-render:releases/hop-phu-huynh-4",
+    "platforms": {
+      "fb_page": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "fb_group": {
+        "on": false,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "instagram": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "tiktok": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "youtube": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      }
+    }
+  },
+  {
+    "title": "Kẹt xe giờ cao điểm",
+    "caption": "6 giờ chiều Sài Gòn: cuộc đua về nhà bắt đầu 🛵\n\nLeo vỉa hè, chui hẻm, đi đường tắt... về tới nhà thì người đi bộ đã ngồi uống trà 🍵😂\n\nBạn đi làm về mất bao lâu? 👇",
+    "hashtags": "#ketxe #giocaodiem #saigon #xemay #dilam #nguoique #hoathinh #haihuoc #reels #xuhuong #fyp",
+    "mediaType": "video",
+    "media": [
+      "https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/ket-xe-gio-cao-diem-4/ket-xe-gio-cao-diem-26-11.mp4"
+    ],
+    "note": "Phim người que 9:16, 29 giây. Caption gốc: huong-dan-lam-phim/posts/nguoi-que-ket-xe-gio-cao-diem.json",
+    "source": "nguyenhoangan1205/nguoi-que-render:releases/ket-xe-gio-cao-diem-4",
+    "platforms": {
+      "fb_page": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "fb_group": {
+        "on": false,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "instagram": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "tiktok": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "youtube": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      }
+    }
+  },
+  {
+    "title": "Đi chợ Tết sớm",
+    "caption": "28 Tết, vợ đưa danh sách đi chợ dài 2 mét 📜\n\nXách đồ chất cao như núi về tới nhà... quên đúng món thịt 😱\n\nNăm nay ai đi chợ Tết nhà bạn? 👇",
+    "hashtags": "#dichotet #chotet #tet #vochong #giadinh #nguoique #hoathinh #haihuoc #reels #xuhuong #fyp",
+    "mediaType": "video",
+    "media": [
+      "https://github.com/nguyenhoangan1205/nguoi-que-render/releases/download/di-cho-tet-som-4/di-cho-tet-som-26-11.mp4"
+    ],
+    "note": "Phim người que 9:16, 29 giây. Caption gốc: huong-dan-lam-phim/posts/nguoi-que-di-cho-tet-som.json",
+    "source": "nguyenhoangan1205/nguoi-que-render:releases/di-cho-tet-som-4",
+    "platforms": {
+      "fb_page": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "fb_group": {
+        "on": false,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "instagram": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "tiktok": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      },
+      "youtube": {
+        "on": true,
+        "status": "cho",
+        "link": "",
+        "note": ""
+      }
+    }
+  },
+  {
     "title": "Dạy con học toán",
     "caption": "Trung bình một buổi tối ở Việt Nam",
     "hashtags": "#daycon #hoctoan #baitapvenha #phuhuynh #tuoihocsinh #ChatGPT #nguoique #hoathinh #haihuoc #reels #xuhuong #fyp",
