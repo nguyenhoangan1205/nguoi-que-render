@@ -1,0 +1,91 @@
+{
+  "ten": "thien-nhien-27-11-22",
+  "nguon": {
+    "repo": "nguyenhoangan1205/thien-nhien-hung-vy",
+    "nhanh": "main",
+    "commit": "219ce086f1b8b83ff859bfabc66155aaad307d96"
+  },
+  "nguyen_lieu": "nguyen-lieu/thien-nhien-27-11-22",
+  "phim": [
+    {
+      "ten_phim": "buoc-vui-giua-dai-ngan-27-11",
+      "preset": "di-bo-rung-ram-vui-02",
+      "tieu_de": "Bước Vui Giữa Đại Ngàn",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "buoc-vui-giua-dai-ngan-27-11.tar.gz"
+    },
+    {
+      "ten_phim": "loi-mon-rung-sau-27-11",
+      "preset": "di-bo-rung-ram-vui-05",
+      "tieu_de": "Lối Mòn Rừng Sâu",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "loi-mon-rung-sau-27-11.tar.gz"
+    },
+    {
+      "ten_phim": "nhe-buoc-giua-rung-xanh-27-11",
+      "preset": "di-bo-rung-ram-vui-07",
+      "tieu_de": "Nhẹ Bước Giữa Rừng Xanh",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "nhe-buoc-giua-rung-xanh-27-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-gia-binh-yen-27-11",
+      "preset": "di-bo-rung-ram-vui-06",
+      "tieu_de": "Rừng Già Bình Yên",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-gia-binh-yen-27-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-nguyen-sinh-xanh-mat-27-11",
+      "preset": "di-bo-rung-ram-vui-08",
+      "tieu_de": "Rừng Nguyên Sinh Xanh Mát",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-nguyen-sinh-xanh-mat-27-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-ram-an-nhien-27-11",
+      "preset": "di-bo-rung-ram-vui-10",
+      "tieu_de": "Rừng Rậm An Nhiên",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-ram-an-nhien-27-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-ram-ngay-nang-27-11",
+      "preset": "di-bo-rung-ram-vui-03",
+      "tieu_de": "Rừng Rậm Ngày Nắng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-ram-ngay-nang-27-11.tar.gz"
+    },
+    {
+      "ten_phim": "rung-xanh-goi-moi-27-11",
+      "preset": "di-bo-rung-ram-vui-01",
+      "tieu_de": "Rừng Xanh Gọi Mời",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "rung-xanh-goi-moi-27-11.tar.gz"
+    },
+    {
+      "ten_phim": "thong-dong-duoi-tan-la-27-11",
+      "preset": "di-bo-rung-ram-vui-04",
+      "tieu_de": "Thong Dong Dưới Tán Lá",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "thong-dong-duoi-tan-la-27-11.tar.gz"
+    },
+    {
+      "ten_phim": "vui-buoc-duong-rung-27-11",
+      "preset": "di-bo-rung-ram-vui-09",
+      "tieu_de": "Vui Bước Đường Rừng",
+      "max_mb": 48,
+      "intro_end": 5.0,
+      "goi": "vui-buoc-duong-rung-27-11.tar.gz"
+    }
+  ]
+}
